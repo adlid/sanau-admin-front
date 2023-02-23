@@ -1,0 +1,18 @@
+.bluetooth-connection-description {
+  padding: 20px;
+}
+
+.bluetooth-connection-description__wrap {
+  width: 340px;
+}
+
+.bluetooth-connection-description__wrap .form-check {
+  margin-bottom: 12px;
+}
+
+.bluetooth-connection-description__title {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+/*# sourceMappingURL=Description.css.map */

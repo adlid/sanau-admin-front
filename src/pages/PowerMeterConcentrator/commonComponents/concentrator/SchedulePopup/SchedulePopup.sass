@@ -1,0 +1,155 @@
+.modal-content
+  width: 594px
+.modal-dialog
+  max-width: 594px
+.schedule-popup
+  width: 100%
+  height: 478px
+  label
+    font-weight: 400
+    font-style: normal
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: .2rem!important
+  &__header
+    padding: 20px 16px 48px 18px
+    height: 64px
+    width: 100%
+    background-color: $background
+    span
+      font-size: 20px
+      font-weight: 600
+      line-height: 28px
+      font-style: normal
+      color: $primaryDark
+      padding-right: 55px
+    img
+      margin-top: -3px
+      cursor: pointer
+  &__month
+    width: 100%
+    border-bottom: 1.5px solid $lineBorders
+    padding-bottom: 25px
+  &__month-block
+    margin: 16px
+    &__title
+      font-weight: 500
+      font-style: normal
+      font-size: 16px
+      line-height: 24px
+      color: $primaryLight
+      margin-bottom: 4px
+    &__paragraph
+      font-weight: 400
+      font-style: normal
+      font-size: 14px
+      line-height: 16px
+      color: $secondary
+    &__input-blocks
+      margin-top: 16px
+  &__survey
+    border-bottom: 1.5px solid $lineBorders
+  &__survey-block
+    margin: 36px 16px 20px
+
+    &__title
+      font-weight: 500
+      font-style: normal
+      font-size: 16px
+      line-height: 24px
+      color: $primaryLight
+      margin-bottom: 4px
+  &__footer
+    margin-top: 16px
+    margin-right: 16px
+.input-blocks
+  &__item
+    width: 50%
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    select
+      border: 1px solid $placeholder
+      border-radius: 3px
+      padding: 7px 12px
+      font-weight: 400
+      font-style: normal
+      font-size: 14px
+      line-height: 20px
+      height: 38px
+      &:focus
+        outline: $accentDark
+        border-color: $accentDark
+      &:active
+        outline: $accentDark
+        border-color: $accentDark
+    input
+      border: 1px solid $placeholder
+      border-radius: 3px
+      padding: 7px 12px
+      font-weight: 400
+      font-style: normal
+      font-size: 14px
+      line-height: 20px
+      &::placeholder
+        color: black
+      &:-ms-input-placeholder
+        color: black
+      &::-ms-input-placeholder
+        color: black
+      &:focus
+        outline: $accentDark
+        border-color: $accentDark
+      &:active
+        outline: $accentDark
+        border-color: $accentDark
+  &__survey-day
+    width: 50%
+    margin-right: 13px
+    position: relative
+
+  &__survey-duration
+    width: 40%
+    margin-right: 13px
+    position: relative
+  &__survey-time
+    input
+      width: 100%!important
+
+  &__day
+    input
+      width: 80%
+  &__time 
+    color: #253D51
+    input
+      width: 55%
+      &::-webkit-calendar-picker-indicator
+        filter: invert(65%) sepia(20%) saturate(223%) hue-rotate(179deg) brightness(86%) contrast(89%)
+        cursor: pointer
+        &:hover
+          filter: invert(19%) sepia(12%) saturate(1992%) hue-rotate(166deg) brightness(98%) contrast(89%)
+        &:active
+          filter: invert(19%) sepia(12%) saturate(1992%) hue-rotate(166deg) brightness(98%) contrast(89%)
+        &:focus
+          filter: invert(19%) sepia(12%) saturate(1992%) hue-rotate(166deg) brightness(98%) contrast(89%)
+        &:visited
+          filter: invert(19%) sepia(12%) saturate(1992%) hue-rotate(166deg) brightness(98%) contrast(89%)
+.main-btn--secondary
+  &:hover
+    background-color: $primaryDark!important
+
+.form-control
+  cursor: pointer
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+@media (max-width: 768px)
+  .modal-content
+    margin: 0 10px
+  .schedule-popup
+    &__header
+      span
+        padding-right: 30px
+    &__footer
+      margin-top: 5px

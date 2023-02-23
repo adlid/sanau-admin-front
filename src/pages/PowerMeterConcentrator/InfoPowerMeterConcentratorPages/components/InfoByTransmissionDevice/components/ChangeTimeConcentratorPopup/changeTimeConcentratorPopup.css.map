@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,4BAA4B,CAAC;EACzB,SAAS,EAAE,KAAK,CAAA,UAAU;CAIJ;;AAHrB,AAAD,kCAAO,CAAC;EACJ,OAAO,EAAE,IAAI;CAAG;;AACnB,AAAD,oCAAS,CAAC;EACN,OAAO,EAAE,IAAI;CAAG",
+    "sources": [
+        "changeTimeConcentratorPopup.sass"
+    ],
+    "names": [],
+    "file": "changeTimeConcentratorPopup.css"
+}

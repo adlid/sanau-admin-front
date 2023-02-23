@@ -1,0 +1,107 @@
+@import './components/NoData/NoData.sass'
+@import './components/Installation/Installation.sass'
+@import './components/Item20/Item20.sass'
+@import './components/Item40/Item40.sass'
+@import './components/Item60/Item60.sass'
+@import './components/Item80/Item80.sass'
+@import './components/Item100/Item100.sass'
+
+.monitoring-table
+    th
+        padding: 0px
+        width: fit-content
+        border: 2px solid #d8dbe0
+    background-color: $white 
+    padding: 20px
+    &__title 
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+    &__subtitle 
+        margin-top: 4px 
+        font-style: normal
+        font-weight: normal
+        font-size: 12px
+        line-height: 16px
+        color: $secondary
+    &__data-title 
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        margin-right: 28px
+
+    
+
+.monitoring-blog
+    padding: 16px
+    width: 224px
+    &__square
+        flex-shrink: 1
+        min-width: 24px
+        height: 24px
+        background: #11774C
+        margin-right: 12px
+        &--color1
+            background: #11774C
+        &--color2
+            background: #1AC049
+        &--color3
+            background: #79DD2A
+        &--color4
+            background: #F7D211
+        &--color5
+            background: #F3890D
+        &--color6
+            background: #D05F5F
+        &--color7
+            background: #355169
+    &__text
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        color: $primaryLight
+
+.monitoring-table 
+    &__wrap
+        overflow-x: auto
+
+// .modal-content
+//     width: 352px!important
+// .modal-dialog
+//     max-width: 352px!important
+    
+.monitoring-popup-wrap
+    justify-content: center
+    .modal-content
+        width: 352px!important
+
+
+
+.monitoring-popup
+    width: 352px
+    // height: 546px
+    background-color: $white 
+    &__header
+        padding: 20px 16px 16px 16px
+        background-color: $background
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+        color: $primaryDark
+        position: relative
+    &__icon 
+        position: absolute 
+        top: 26px
+        right: 18px
+        cursor: pointer
+    &__body 
+        padding: 16px
+        border-bottom: 1px solid $lineBorders
+    &__footer
+        padding: 16px
+
+    
+
+
+
+

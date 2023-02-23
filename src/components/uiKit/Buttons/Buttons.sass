@@ -1,0 +1,153 @@
+
+.link-btn, ,.link-btn-outline, .custom-btn
+    font-style: normal
+    font-weight: 500
+    line-height: 24px
+    border-radius: 2px
+    font-size: 16px
+    
+.link-btn, ,.link-btn-outline
+    span
+        width: 100% 
+        height: 100% 
+        display: flex
+        justify-content: center
+        align-items: center
+
+.link-btn
+    background-color: $accentDark
+    color: $white 
+    &--disabled
+        background-color: $background!important
+        color: $placeholder!important
+    &:hover 
+        background-color: $accentLight
+        color: $white      
+    &:focus
+        border: 1px solid #253D51
+        color: $white
+        box-shadow: none
+
+.link-btn-outline
+    background-color: transparent
+    color: $primaryLight
+    border: 1px solid $primaryLight
+    &--secondary
+        color: $white
+        border: 1px solid $secondary
+    &:hover, &:focus 
+        color: $accentDark
+        border: 1px solid $accentDark
+        
+.custom-btn , .main-btn
+    height: 56px
+    background-color: $accentDark !important
+    color: $white 
+    width: 100%
+    border-color: transparent
+    border-radius: 2px
+    &:disabled 
+        background-color: $accentDark
+        border-color: transparent
+    &:hover 
+        background-color: $accentLight
+        color: $white 
+        border-color: transparent
+    &:focus, &:active 
+        background-color: $accentDark
+        border: 1px solid #253D51
+        color: $white
+        box-shadow: none
+
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle
+    background-color: $accentDark
+
+.main-btn
+    &--secondary 
+        background-color: $primaryLight !important
+    &--alarm 
+        background-color: $errorColor !important
+        &:hover, &:active, &:focus 
+            background-color: #F66F6F
+            border: 1px solid #253D51
+       
+
+    &--disabled 
+        background-color: $background
+        color: $placeholder
+        &:hover, &:focus, &:active  
+            background-color: $background!important
+            color: $placeholder
+
+.custom-btn
+    margin-top: 36px
+    margin-bottom: 36px
+.add-btn 
+    height: 100%
+    display: flex
+    justify-content: 
+    align-items: center
+    svg 
+        display: block
+    span
+        display: block
+        margin-left: 8px
+        
+
+        
+
+
+.excel-btn
+    height: 32px
+    width: 164px
+    background-color: $primaryLight
+    display: flex
+    justify-content: space-between 
+    align-items: center
+    padding-left: 16px 
+    padding-right: 16px
+    border-color: transparent
+    box-shadow: none
+    &:hover 
+        background-color: $primaryDark
+        border-color: transparent
+    &:focus, &:active 
+        background-color: $primaryLight!important 
+        border: 1px solid $accentLight
+        outline: none 
+        box-shadow: none
+    span 
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+
+.btn-primary:not(:disabled):not(.disabled):active
+    border-color: transparent
+
+
+.outline-btn 
+    font-weight: 500
+    font-size: 14px
+    line-height: 16px
+    color: $primaryLight 
+    background-color: $white 
+    padding: 12px 16px
+    outline: none 
+    border: 1px solid #B9BEC7
+    border-radius: 2px
+    outline: none 
+    height: 40px
+    &--active 
+        background-color: $background
+    &:focus, &:active 
+        background-color: $background
+        border-color: $lineBorders
+        box-shadow: none 
+        color: $primaryLight!important 
+    &:hover
+        background-color: $background!important
+        color: $primaryLight!important 
+        border-color: #B9BEC7
+
+.sort-by-button
+    min-width: 171px

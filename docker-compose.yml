@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  sanau-saas-admin-frontend:
+    container_name: sanau-saas-admin-frontend
+    build:
+      context: .
+      dockerfile: .docker/reactjs/Dockerfile
+    dns:
+        - 4.4.4.4
+        - 8.8.8.8
+    ports:
+      - '3001:80'

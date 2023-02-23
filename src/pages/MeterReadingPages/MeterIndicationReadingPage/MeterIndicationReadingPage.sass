@@ -1,0 +1,39 @@
+@import './components/IndicationFilter/IndicationFilter'
+@import './components/IndicationLocationList/IndicationLocationList'
+@import './components/IndicationMetersList/IndicationMetersList'
+
+.meter-indication-reading-page 
+    height: 100%
+    position: relative
+    max-height: calc(100vh - 130px) 
+    overflow: hidden
+    .nav-tabs 
+    .nav-tabs .nav-link  
+        border: none 
+        border-radius: 0
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: $secondary
+        height: 48px
+        border: 1px solid transparent
+        display: flex
+        align-items: center
+        &:hover 
+            background-color: $background
+            color: $primaryLight
+
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+        color: $primaryDark
+    .nav-link.active
+        border-bottom: 1px solid $blueTab
+    .nav-tabs 
+        margin-bottom: 20px
+        border: none
+    .tab-content>.active 
+        // height: calc(100vh - 135px)
+    &__wrap 
+        flex-grow: 1
+        height: 100% 
+
+        

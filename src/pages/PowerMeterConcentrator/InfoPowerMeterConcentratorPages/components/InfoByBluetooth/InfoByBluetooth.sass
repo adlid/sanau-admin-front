@@ -1,0 +1,111 @@
+@import './InfoByBluetoothAddGroup'
+
+.info-by-bluetooth 
+    background-color: $white
+    padding: 25px 20px
+    &__header 
+        padding-top: 18px
+        padding-bottom: 18px
+        font-weight: 500
+    &__item 
+        border-bottom: 1px solid $lineBorders
+    &__wrap
+        padding-top: 14px 
+        padding-bottom: 14px
+    &__btn 
+        font-style: normal
+        font-weight: 500
+        line-height: 24px
+        border-radius: 2px
+        font-size: 16px 
+        height: 40px
+        background-color: $primaryLight
+        border: 1px solid transparent 
+        box-shadow: none
+        &:hover
+            background-color: $primaryDark
+        &:active, &:focus 
+            background-color: $primaryLight!important
+            border-color: $accentDark!important
+            outline: none
+            box-shadow: none
+        &--icon 
+            min-width: 171px
+
+        span 
+            display: inline-block
+            margin-left: 10px
+            margin-right: 10px
+    &__sort 
+        background-color: $primaryDark
+        width: 180px
+        padding: 16px
+        box-shadow: 0px 2px 8px rgba(12, 18, 22, 0.24)
+        border-radius: 2px
+    &__icon
+        transition-duration: 0.3s
+        transition-property: transform
+        &--rotated 
+            transform: rotate(-180deg)
+    &__period
+        background-color: $primaryDark
+        padding: 20px
+        width: 350px
+    &__title 
+        font-size: 16px
+        line-height: 24px
+        color: $white
+        margin-bottom: 12px
+    &__calendar 
+        margin-bottom: 20px
+    &__category-btn 
+        font-style: normal
+        font-weight: 500
+        line-height: 24px
+        border-radius: 2px
+        font-size: 16px 
+        height: 40px
+        background-color: $background
+        color: $primaryLight
+        border-right: none
+        span 
+            text-align: left
+            display: inline-block
+            margin-right: 8px
+            min-width: 120px
+    &__filter 
+        margin-bottom: 35px
+        height: 38px
+    &__form-control
+        height: 40px
+        border-right-color: transparent 
+
+
+    &__filter-icon
+        width: 48px
+        height: 40px
+        cursor: pointer
+        border: 1px solid $lineBorders
+        border-left: none 
+        &--open
+            background-color: $primaryLight
+        &:hover 
+            background-color: $primaryLight
+
+        &--secondary 
+            background-color: $primaryLight
+    &__popover-container
+        left: -95px!important
+    &__btn-groups 
+        margin-bottom: 35px
+    &__sort-by
+        width: 180px
+        background: $white 
+        box-shadow: 0px 2px 8px rgba(12, 18, 22, 0.24)
+        border-radius: 2px
+        padding: 16px
+    &__popover-sort-by-container
+        left: 10px!important
+
+
+

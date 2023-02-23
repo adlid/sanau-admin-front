@@ -1,0 +1,40 @@
+.indication-location-list
+    overflow: auto
+    &::-webkit-scrollbar
+        width: 4px
+        margin-right: 5px
+    &::-webkit-scrollbar-thumb
+        background-color: #828282
+        border-radius: 2px
+    padding: 32px
+    width: 100%
+    height: 100%
+    background-color: $white 
+    max-width: 420px    
+    margin-right: 20px
+    &__search-block
+        margin-bottom: 17px
+        display: flex
+        width: 100%
+    &__search-select-parent
+        position: relative
+        width: 111px 
+        &__search-select
+            text-overflow: ellipsis
+            overflow: hidden 
+            white-space: nowrap
+            height: 40px
+            width: 100%
+            padding: 11px 12px!important
+            font-size: 14px
+            background: $background!important
+
+            border-right: none
+            border-bottom-right-radius: 0px
+            border-top-right-radius: 0px
+            .MuiInputBase-input
+                font-weight: 400
+                font-style: normal
+                font-size: 14px 
+                line-height: 16px
+                color: $primaryLight

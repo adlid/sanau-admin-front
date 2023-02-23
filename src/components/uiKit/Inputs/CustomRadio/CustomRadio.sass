@@ -1,0 +1,65 @@
+.custom-radio
+    label
+        margin-bottom: 0px 
+    [type="radio"]:checked, [type="radio"]:not(:checked) 
+        position: absolute
+        left: -9999px
+
+    [type="radio"]:checked + label,
+    [type="radio"]:not(:checked) + label
+        position: relative
+        padding-left: 32px
+        cursor: pointer
+        display: inline-block
+        font-size: 14px
+        line-height: 20px
+        color: $primaryDark
+        font-family: Inter
+
+    [type="radio"]:checked + label:before,
+    [type="radio"]:not(:checked) + label:before 
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        width: 20px
+        height: 20px
+        border: 1px solid #B9BEC7
+        border-radius: 100%
+        background: transparent
+
+    [type="radio"]:checked + label:before
+        border-color: $accentDark
+
+    [type="radio"]:disabled + label:before 
+        border-color: gray
+
+    [type="radio"]:checked + label:after,
+    [type="radio"]:not(:checked) + label:after 
+        content: ''
+        width: 12px
+        height: 12px
+        background: $accentDark
+        position: absolute
+        top: 4px
+        left: 4px
+        border-radius: 100%
+        -webkit-transition: all 0.2s ease
+        transition: all 0.2s ease
+    [type="radio"]:disabled + label:after 
+        background: gray
+
+    [type="radio"]:not(:checked) + label:after 
+        opacity: 0
+        -webkit-transform: scale(0)
+        transform: scale(0)
+    
+    [type="radio"]:checked + label:after 
+        opacity: 1
+        -webkit-transform: scale(1)
+        transform: scale(1)
+    &--secondary 
+        [type="radio"]:checked + label,
+        [type="radio"]:not(:checked) + label
+            color: $white
+

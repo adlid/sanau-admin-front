@@ -1,0 +1,120 @@
+.operatorProfile
+    p
+        color: $primaryDark
+        margin-bottom: 0px
+    &_block
+        width: 500px
+        background: $white
+        &__header 
+            font-weight: 600
+            font-size: 20px
+            line-height: 28px
+            padding: 20px 
+            border-bottom: 1px solid #D7E2F2
+        &__body
+            padding: 20px
+            .title 
+                font-weight: 500
+                font-size: 16px
+                line-height: 24px
+            .date
+                font-weight: 400
+                font-size: 14px
+                line-height: 16px
+                color: #8A93A2
+            .infoLine
+                display: flex
+                justify-content: space-between
+                align-items: center
+                border-bottom: 1px solid #D7E2F2
+                padding: 12px 0px
+                &_text
+                    font-weight: 400
+                    font-size: 14px
+                    line-height: 15px
+
+
+.profile-static-card
+    width: 500px
+    background-color: $white
+    margin-bottom: 8px
+    &__header 
+        padding: 20px 
+        border-bottom: 1px solid $lineBorders
+        h4 
+            font-style: normal
+            font-weight: 600
+            font-size: 20px
+            line-height: 28px
+            color: $primaryDark
+            margin: 0
+    &__body 
+        padding: 20px
+    &__right
+        display: none
+    &__form 
+        margin-top: 20px
+    &__footer 
+        border-top: 1px solid $lineBorders
+        padding: 20px 
+        &--pl0
+            padding-left: 0
+            padding-bottom: 0
+
+    &__title 
+        display: block
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: $primaryLight
+        margin-bottom: 4px
+    &__descr 
+        display: block
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 16px
+        color: $secondary
+    &__wrap 
+        width: 305px
+    &__password2
+        margin-bottom: -24px
+    &__password1
+        margin-bottom: -8px
+
+
+@media (max-width:  1100px)
+    .profile-static-card
+        width: 100%
+
+@media (max-width: 575.98px)
+    .profile-static-card
+        width: 100%
+        &__wrap
+            width: 100%
+        &__header
+            display: flex
+            display: -webkit-flex
+            display: -moz-flex
+            display: -o-flex
+            display: -ms-flex
+
+            justify-content: space-between
+            -webkit-justify-content: space-between
+            h4
+                font-size: 16px
+        &__right
+            display: block
+            float: right
+            margin-right: 7px
+
+@media (max-width: 515px)
+    .profile-static-card
+        &__body
+            flex-direction: column
+            -webkit-flex-direction: column
+            -ms-flex-direction: column
+        &__wrap
+            margin-bottom: 15px
+        &__descr
+            width: 90%

@@ -1,0 +1,17 @@
+.edit-water-concentrator-description {
+  padding: 20px;
+}
+
+.edit-water-concentrator-description__wrap {
+  width: 340px;
+}
+
+.edit-water-concentrator-description__wrap .form-check {
+  margin-bottom: 12px;
+}
+
+.edit-water-concentrator-description__title {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 12px;
+} 

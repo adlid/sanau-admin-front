@@ -1,0 +1,63 @@
+.tabs-type1 
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+        background-color: transparent 
+        border: none 
+        border-radius: 0
+        border-bottom: 2px solid $accentDark
+        padding-left: 0px
+        padding-right: 0px
+        margin-left: 24px
+        margin-right: 24px
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: $primaryDark
+    .nav-tabs .nav-link  
+        background-color: transparent 
+        border: none 
+        border-radius: 0
+        padding-left: 0px
+        padding-right: 0px
+        margin-left: 24px
+        margin-right: 24px
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: $secondary
+        &:hover 
+            color: $primaryDark
+    .nav-tabs 
+        margin-bottom: 20px
+        border-bottom: 1px solid $lineBorders
+    .tab-content
+        padding-left: 20px
+        padding-right: 20px
+
+
+.tabs-type2
+    .nav-tabs .nav-link  
+        border: none 
+        border-radius: 0
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: $secondary
+        height: 48px
+        border: 1px solid transparent
+        display: flex
+        align-items: center
+        &:hover 
+            background-color: $background
+            color: $primaryLight
+            border-color: $primaryDark
+            border-radius: 2px
+
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+        background-color: $primaryDark 
+        color: $white
+    .nav-tabs 
+        margin-bottom: 20px
+        border: none 
+    .tab-content
+        .tab-pane .active 
+            height: 100%

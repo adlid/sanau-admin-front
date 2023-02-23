@@ -1,0 +1,101 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^28.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
+    "@coreui/coreui": "^4.0.0-rc.5",
+    "@coreui/icons": "^1.0.1",
+    "@coreui/icons-react": "^1.0.2",
+    "@coreui/react": "^3.4.5",
+    "@coreui/react-chartjs": "^1.1.0",
+    "@date-io/date-fns": "^1.3.13",
+    "@emotion/react": "^11.1.5",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@material-ui/pickers": "^3.2.10",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/downloadjs": "^1.4.2",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.19.15",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-input-mask": "^3.0.0",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router": "^5.1.11",
+    "antd": "^4.15.5",
+    "axios": "^0.21.1",
+    "axios-auth-refresh": "^3.1.0",
+    "date-fns": "^2.19.0",
+    "downloadjs": "^1.4.7",
+    "express": "^4.17.1",
+    "formik": "^2.2.6",
+    "html-react-parser": "^1.2.6",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "notistack": "^1.0.6",
+    "package.json": "^2.0.1",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-bootstrap": "^1.4.3",
+    "react-dom": "^17.0.1",
+    "react-input-mask": "^2.0.4",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-tiny-popover": "^6.0.4",
+    "react-verification-code-input": "^1.2.9",
+    "redux": "^4.0.5",
+    "reselect": "^4.0.0",
+    "sockjs-client": "^1.5.0",
+    "stompjs": "^2.3.3",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.8"
+  },
+  "scripts": {
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@types/react-beautiful-dnd": "^13.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/sockjs-client": "^1.5.1",
+    "@types/stompjs": "^2.3.5"
+  }
+}

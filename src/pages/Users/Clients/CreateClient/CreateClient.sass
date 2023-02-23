@@ -1,0 +1,55 @@
+.create-client 
+    height: calc(100vh - 120px)
+    position: relative
+    overflow: hidden
+    &__tab 
+        height: calc(100% - 81px)
+    &__header
+        background-color: $white
+        margin-bottom: 0px!important
+    &__wrap 
+        margin-top: 8px
+        background-color: $white
+        height: calc(100% - 126px)
+        .tab-content
+            padding: 0px
+    &__btns
+        padding: 20px   
+        background-color: $white
+        border-top: 1px solid $lineBorders
+    &__title 
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+        display: block
+        padding: 20px
+        background-color: $white
+        margin: 0
+    &__subtitle
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        color: #253D51
+    &__select
+        width: 100% 
+        max-width: 736px
+    &__checkbox
+        display: flex
+        align-items: center
+    &__checkbox_title
+        font-size: 14px
+        line-height: 16px
+        color: $primaryLight 
+        margin-bottom: 12px
+
+.client-character
+    &__form-item
+        width: 360px  
+
+@media (max-width: 1650px)
+    .create-client 
+        height: unset
+        min-height: calc(100vh - 120px)
+        &__tab 
+            height: unset
+            min-height: calc(100% - 81px)

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oCAAoC,CAAC;EACjC,OAAO,EAAE,IAAI;CASe;;AAR3B,AAAD,0CAAO,CAAC;EACJ,KAAK,EAAE,KAAK;CAGgB;;AAJ/B,AAGG,0CAHG,CAGH,WAAW,CAAC;EACR,aAAa,EAAE,IAAI;CAAG;;AAC7B,AAAD,2CAAQ,CAAC;EACL,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,aAAa,EAAE,IAAI;CAAG",
+    "sources": [
+        "Taksonomy.sass"
+    ],
+    "names": [],
+    "file": "Taksonomy.css"
+}

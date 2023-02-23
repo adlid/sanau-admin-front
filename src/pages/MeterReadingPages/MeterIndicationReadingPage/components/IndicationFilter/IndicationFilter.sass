@@ -1,0 +1,226 @@
+.indication-filter
+    background-color: $white
+    margin-bottom: 16px
+    width: 100% 
+    padding: 16px 20px 
+    &__btns-block
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 12px
+    &__content-block
+        display: flex
+        display: -o-flex
+        display: -ms-flex
+        display: -moz-flex
+        display: -webkit-flex
+
+        justify-content: space-between
+
+        flex-direction: row
+
+    &__group
+        margin-right: 20px
+        width: 100%
+    &__title
+        font-size: 14px
+        line-height: 16px
+        color: $primaryLight
+        margin-bottom: 8px
+    &__border
+        width: 16px
+        height: 2px
+        background-color: $secondary
+        border-radius: 2px
+        margin-right: 8px
+        margin-left: 8px
+
+    &__calendar
+        align-items: center
+        display: flex
+        display: -moz-flex
+        display: -ms-flex
+        display: -webkit-flex
+        display: -o-flex
+        justify-content: flex-start
+        -webkit-justify-content: flex-start
+        .MuiFormControl-root
+            .MuiInput-formControl
+                height: 40px
+                input
+                    font-size: 14px
+    button
+        align-self: flex-start
+    &__select
+        width: 100%
+        #demo-simple-select
+            font-size: 14px
+            color: $primaryLight
+    &__date-block
+        justify-content: end
+        -webkit-justify-content: flex-end
+
+        align-items: end
+        -webkit-align-items: flex-end
+        -ms-flex-align: end
+        width: 100%
+
+        .main-btn
+            width: 153px!important
+       
+    &__parameters
+        width: 100%
+
+.calendar-icon
+    margin-top: -8px
+.width83
+    width: 83%
+.btns-block
+    &__see-btn
+        width: 45%
+        min-width: 120px
+        height: 40px
+        background-color: $primaryLight
+        border-radius: 2px
+        border: none
+
+        color: white
+        font-weight: 500
+        font-style: normal
+        font-size: 14px
+        line-height: 16px
+        text-align: center
+        &:hover
+            background-color: $primaryDark
+        &:disabled 
+            background-color: #EBEDEF !important
+            color: $placeholder!important
+
+    &__count-btn
+        width: 100%
+        min-width: 120px
+        height: 40px
+        background-color: $accentDark
+        border-radius: 2px
+        border: none
+
+        color: white
+        font-weight: 500
+        font-style: normal
+        font-size: 14px
+        line-height: 16px
+        text-align: center
+        &:hover
+            background-color: $accentLight
+        &::disabled 
+            background-color: #EBEDEF !important
+            color: $placeholder!important
+
+
+
+
+.MuiInputBase-input
+    font-size: 14px
+    line-height: 16px
+    color: $primaryDark
+    padding: 0!important
+
+.MuiIconButton-root
+    padding: 0!important
+
+.MuiInputBase-root
+    border-color: $lineBorders
+    font-family: Inter!important
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 16px
+    outline: none
+    border: 1px solid $placeholder
+    border-radius: 2px
+    padding: 9.5px 12px!important
+    &:hover
+        border-color: $accentDark
+
+.MuiFormControl-root
+    outline: none
+
+.MuiPickersDay-daySelected
+    background-color: $accentDark!important
+
+.MuiPickersDay-current
+    color: $accentDark
+
+.MuiInput-underline:before
+    display: none!important
+
+.MuiInput-underline:after
+    display: none!important
+.MuiPopover-paper
+    margin-top: 20px
+.MuiList-root
+    min-width: 264px
+.MuiPaper-elevation8
+    box-shadow: none
+.MuiSelect-select:focus
+    background-color: transparent!important
+
+
+
+@media(max-width: 1174px)
+    .meters-filter
+        &__date-block
+            .main-btn
+            height: 70%!important
+            font-size: 12px!important
+    .width83
+        width: 100%
+
+@media(max-width: 776px)
+    .meters-filter
+        flex-direction: column
+        &__group
+            margin-right: 0
+            margin-bottom: 18px
+        &__date-block
+            flex-direction: column
+            -webkit-flex-direction: column
+            -ms-flex-direction: column
+
+            align-items: center
+            -webkit-align-items: center
+            -ms-flex-align: center
+
+            justify-content: space-between
+            -webkit-justify-content: space-between
+
+            .main-btn
+                margin-top: 20px
+                width: 100%!important
+                align-self: center
+                vertical-align: center
+                font-size: 14px!important
+                span
+                    align-self: center
+                    vertical-align: center
+
+        &__group
+            .MuiInputBase-root
+            width: 100%
+        &__margin-right
+            margin-right: 0
+            width: 100%
+        &__calendar
+            width: 100%
+            .MuiFormControl-root
+                width: 100%
+
+.dateDivider
+    margin: 0px 8px 0px 8px
+    width: 16px
+    height: 2px
+    border-radius: 2px
+    background: #8A93A2
+
+@media (max-width: 576px)
+    .MuiInputBase-input
+        font-size: 12px!important

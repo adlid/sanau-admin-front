@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,uBAAuB,CAAC;EACpB,KAAK,EAAE,gBAAgB;EACvB,UAAU,EAAE,gBAAgB;CAAG",
+    "sources": [
+        "RichToolip.sass"
+    ],
+    "names": [],
+    "file": "RichToolip.css"
+}

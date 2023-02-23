@@ -1,0 +1,78 @@
+@import '../../../../../components/table/WaterIndicationsSideBar/WaterIndicationsSideBar'
+
+.read-data-view-table
+    background-color: $white
+    padding: 16px 20px
+    text-align: center
+    &__pre-header
+        padding: 0!important
+    &__header 
+        height: 64px
+        th 
+            font-size: 14px!important
+            font-weight: 500!important
+    &__bgc 
+        background-color: $bgTable
+        &--white 
+            background-color: $white 
+
+    &__bgFirst
+        background-color: $white
+    .no-border
+        border-left: none
+        border-top: none
+        border-right: none
+        border-bottom: 1px solid $lineBorders
+    .sign-width
+        width: 43px
+    .overflow-block
+        &::-webkit-scrollbar
+            height: 8px
+            margin-right: 5px
+        &::-webkit-scrollbar-thumb
+            background-color: #828282
+            border-radius: 2px
+        overflow-x: scroll 
+        table thead tr th table
+            width: 100%
+    .table-bordered thead th
+        border-bottom-width: 0
+    .table-bordered td, .table-bordered th
+        // border-width: 2px
+        border-color: $lineBorders
+    .table td, .table th 
+        padding: 8px
+        vertical-align: middle 
+        font-family: Inter
+        font-weight: normal
+        font-size: 12px
+        line-height: 16px
+        color: $primaryDark
+
+    .table thead th
+        width: 18%
+        border-right: 0
+        vertical-align: middle
+        font-weight: 600
+        background-color: $bgTable
+
+
+
+.col-100
+    min-width: 100px!important
+.col-150
+    min-width: 150px!important
+
+.table-drawer
+    &::-webkit-scrollbar 
+        width: 4px
+        margin-right: 5px 
+    &::-webkit-scrollbar-thumb
+        background-color: #828282
+        border-radius: 2px
+
+.width100
+    min-width: 100px !important
+    width: 100px !important
+    max-width: 100px !important
+ 

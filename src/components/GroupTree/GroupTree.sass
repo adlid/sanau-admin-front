@@ -1,0 +1,63 @@
+@import '~antd/dist/antd.css'; 
+
+.site-tree-search-value 
+    color: #f50
+
+.MuiTreeItem-iconContainer
+    cursor: pointer
+.MuiTreeItem-label
+    cursor: unset
+    
+.group-tree-item
+    position: relative
+    &__title
+        font-size: 14px
+        line-height: 16px
+        margin-bottom: 0px
+        padding: 8px 8px 8px 0px
+    &__rightSide
+        position: absolute
+        top: 5px
+        right: 0
+        display: flex
+        gap: 8px
+        align-items: center
+        &_values
+            background: #EBEDEF
+            font-size: 12px
+            font-weight: 600
+            line-height: 16px
+            margin-bottom: 0px
+            padding: 2px 4px
+            border: 1px solid #D7E2F2
+            border-radius: 2px 
+            .green
+                color: #31B77E
+            .red
+                color: #EB5757
+        &_menu 
+            cursor: pointer
+            border-radius: 2px
+            &:hover 
+                background: #18A0FB
+                color: $white
+            &_item
+                cursor: pointer
+                font-size: 14px
+                line-height: 16px
+                padding: 12px
+                &:hover 
+                    background: #EBEDEF 
+                .icon
+                    margin-right: 10px
+
+.grouptree_item_menu
+    width: 170px
+    border-radius: 4px
+    background: #FFFFFF
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 1)
+    -moz-box-shadow: 0px 2px 8px rgba(38, 68, 94, 1)
+    -o-box-shadow: 0px 2px 8px rgba(38, 68, 94, 1)
+    -webkit-box-shadow: 0px 2px 8px rgba(38, 68, 94, 1)
+            
+            

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iCAAiC,CAAC;EAC9B,OAAO,EAAE,IAAI;CASe;;AAR3B,AAAD,uCAAO,CAAC;EACJ,KAAK,EAAE,KAAK;CAGgB;;AAJ/B,AAGG,uCAHG,CAGH,WAAW,CAAC;EACR,aAAa,EAAE,IAAI;CAAG;;AAC7B,AAAD,wCAAQ,CAAC;EACL,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,IAAI;EACjB,aAAa,EAAE,IAAI;CAAG",
+    "sources": [
+        "Description.sass"
+    ],
+    "names": [],
+    "file": "Description.css"
+}

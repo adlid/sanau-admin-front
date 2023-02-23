@@ -1,0 +1,79 @@
+.meters-graph 
+    position: relative
+    background-color: $white 
+    border-radius: 2px 
+    margin-bottom: 16px
+    padding: 20px
+    &__header 
+        margin-bottom: 37px
+    &__title 
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+        margin-bottom: 4px
+    &__subtitle 
+        font-size: 12px
+        line-height: 16px
+        color: $secondary
+        margin-bottom: 0
+    &__icon 
+        cursor: pointer
+    &__body
+        width: 100%
+        overflow-x: scroll
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+    &__btn 
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        color: $primaryLight 
+        background-color: $white 
+        padding: 12px 16px
+        outline: none 
+        border: 1px solid $lineBorders
+        border-radius: 2px
+        &--active 
+            background-color: $background
+        &:hover 
+            background-color: $background
+    &__select
+        border: unset !important
+        width: 320px
+        margin-right: 20px
+        &::-webkit-scrollbar
+            width: 4px
+            margin-right: 5px
+        &::-webkit-scrollbar-thumb
+            background-color: #828282
+            border-radius: 2px
+
+
+
+
+@media (max-width: 767px)
+    .meters-graph
+        &__body
+            width: 100%
+            overflow-x: scroll
+        .chartjs-render-monitor
+            width: 650px!important
+
+@media (max-width: 520px)
+    .meters-graph
+        .chartjs-render-monitor
+            width: 500px!important
+
+
+@media (max-width: 484px)
+    .meters-graph
+        .chartjs-render-monitor
+            width: 430px!important
+
+
+@media (max-width: 352px)
+    .meters-graph
+        .chartjs-render-monitor
+            width: 350px!important

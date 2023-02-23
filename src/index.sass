@@ -1,0 +1,130 @@
+//variables
+@import './styles/_variables'
+@import './styles/_consts'
+
+//global component styles 
+@import './styles/formControl'
+@import './styles/customTabsStyles'
+@import './container/Sidebar/Sidebar'
+@import './container/Header/Header'
+
+//uiKit
+@import './components/uiKit/Buttons/Buttons' 
+@import './components/uiKit/SideBar/SidebarItem'
+@import "./components/uiKit/Search/Search"
+@import './components/uiKit/Pagination/Pagination'
+@import './components/uiKit/modals/Modals'
+@import './components/Tooltip/RichToolip'
+
+
+//components 
+@import './components/table/statuses/tableStatus'
+@import './components/uiKit/Inputs/CustomRadio/CustomRadio'
+@import './components/GroupTree/GroupTree'  
+
+//pages  
+@import './pages/500/500'
+@import './pages/AuthPage/AuthPage'
+
+
+//pages components
+@import './pages/MeterReadingPages/MeterIndicationReadingPage/MeterIndicationReadingPage'
+@import './pages/MeterReadingPages/ReadDataViewsPage/ReadDataViewsPage'
+@import "./pages/MeterReadingPages/MeterIndicationReadingPage/components/IndicationMetersList/components/IndicationMetersButton/IndicationMetersButton"
+@import "./pages/MeterReadingPages/MeterIndicationReadingPage/components/IndicationMetersList/components/IndicationMetersItem/IndicationMetersItem"
+
+// main pages
+@import "./pages/MainPage/MainPage"
+
+// operators pages
+@import "./pages/Users/Operators/OperatorsListPage/OperatorsList"
+@import "./pages/Users/Operators/CreateOperator/CreateOperatorPage"
+@import "./pages/Users/Operators/ActivateOperatorPage/ActivateOperatorPage" 
+
+// clients pages
+@import "./pages/Users/Clients/ClientsListPage/ClientsList" 
+@import "./pages/Users/Clients/CreateClient/CreateClient"
+
+//access rigths templates pages
+@import "./pages/AccessTemplates/AccessTemplates" 
+
+//power concentrator pages
+@import './pages/PowerMeterConcentrator/PowerMeterConcentrator'
+
+//water concentrator pages
+@import './pages/WaterMeterConcentrator/WaterMeterConcentrator'
+
+//gas concentrator pages
+@import './pages/GasMeterConcentrator/GasMeterConcentrator' 
+
+//groups control
+@import './pages/GroupsControl/GroupsControlPage'
+
+//news pages
+@import './pages/NewsPages/NewsPages'
+
+//news
+@import './pages/Logs/Logs'
+
+// reports
+@import './pages/ReportsPages/ReportsPages' 
+
+
+//monitoring
+@import './pages/Monitoring/MonitoringTable/monitoringTable'
+
+// profile
+@import './pages/OperatorProfilePage/OperatorProfilePage' 
+
+// uspd logs
+@import './pages/USPDLogs/USPDLogs' 
+
+.c-main 
+  padding-bottom: 2rem
+
+
+
+body
+  overflow: auto !important
+  padding-right: 0px !important
+  &::-webkit-scrollbar
+    width: 4px
+    margin-right: 5px
+  &::-webkit-scrollbar-thumb
+    background-color: #828282
+    border-radius: 2px
+
+.container-fluid, .container-fluid>div
+  height: 100%
+
+body, h2
+  margin: 0
+  font-family: 'Inter', sans-serif
+
+a
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+hr
+  width: 100%
+  color: $lineBorders
+
+button:focus 
+  outline: 0 !important
+  box-shadow: unset !important
+
+button
+  outline: 0 !important
+  border: unset
+
+.main-btn--disabled
+  color: #B9BEC7
+  background-color: #EBEDEF !important
+  
+input:-webkit-autofill,
+input:-webkit-autofill-selected,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  
+    background-color: transparent!important

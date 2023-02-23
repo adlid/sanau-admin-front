@@ -1,0 +1,82 @@
+.private-header
+    &__menu
+        background-color: #ffffff
+        max-width: 250px
+        margin-left: calc(100% - 180px)
+
+.menu 
+    display: block 
+    width: 100%
+    padding: 12px 16px
+    border-bottom: 1px solid $lineBorders
+    cursor: pointer
+    &:last-child
+        border-bottom: none
+    &__text 
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        margin-left: 10px
+        color: $primaryDark
+
+.header
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1)
+    p
+        margin-bottom: 0px
+    height: 56px
+    background: $white
+    padding: 16px 32px
+    display: flex
+    justify-content: space-between
+    &__leftSide
+        display: flex 
+        align-items: center
+        &_path
+            color: $secondary
+            font-size: 14px
+            line-height: 16px
+            margin-left: 35px
+
+    &__rightSide
+        display: flex
+        align-items: center
+        &_avatar
+            border-radius: 100%
+            background: $background
+            border: 1px solid $placeholder
+            width: 40px
+            height: 40px
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-left: 24px
+        &_info
+            margin-left: 12px
+            .fio
+                width: 130px
+                text-overflow: ellipsis
+                overflow: hidden 
+                white-space: nowrap
+                font-size: 16px
+                line-height: 24px
+                color: $primaryDark
+            .role
+                font-size: 12px
+                line-height: 16px
+                color: $secondary
+
+.breadCrumbs
+    &__root
+        display: flex
+        flex-direction: column 
+    &__link
+        color: #18A0FB
+        font-size: 14px
+        line-height: 16px
+        cursor: pointer
+        &:hover 
+            text-decoration: underline
+    &__current
+        color: #8A93A2
+        font-size: 14px
+        line-height: 16px

@@ -1,0 +1,50 @@
+.c-sidebar .c-sidebar-nav-dropdown-toggle::after
+    background-image: url('../../assets/imgs/sidebarArrow.svg')!important
+
+
+html:not([dir=rtl]) .c-sidebar-nav-dropdown.c-show>.c-sidebar-nav-dropdown-toggle::after
+    transform: rotate(-180deg)!important
+
+
+.c-sidebar .c-sidebar-nav-dropdown-toggle:hover, .c-sidebar .c-sidebar-nav-link:hover
+    background-color: $accentDark!important
+
+.c-sidebar .c-sidebar-nav-dropdown.c-show
+    background: $primaryLight
+
+.c-sidebar
+    background: $primaryDark
+
+.sidebar-brand
+    width: 100%
+    margin-left: 30px
+
+.c-sidebar .c-sidebar-minimizer::before, 
+.c-sidebar .c-sidebar-minimizer:hover::before
+    background-image: url('../../assets/imgs/sidebarArrowMinimizer.svg')!important
+
+.c-sidebar .c-sidebar-minimizer
+    background-color: $primaryLight
+    
+.c-sidebar .c-sidebar-brand, .c-sidebar .c-sidebar-header
+    background: $primaryDark
+
+.c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover>.c-sidebar-nav-dropdown-toggle, .c-sidebar.c-sidebar-minimized .c-sidebar-nav-item:hover>.c-sidebar-nav-link
+    background: $accentDark!important
+
+
+.c-sidebar.c-sidebar-minimized .c-sidebar-nav>.c-sidebar-nav-dropdown:hover
+    background: $accentDark!important
+
+
+.sidebar-logo-mini
+    display: none
+
+.c-sidebar-minimized
+    .c-sidebar-brand
+        .sidebar-brand
+            margin-left: 18px
+            .sidebar-logo-main
+                display: none!important 
+            .sidebar-logo-mini
+                display: block!important 

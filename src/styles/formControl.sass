@@ -1,0 +1,165 @@
+input 
+    caret-color: $accentDark!important
+
+.form-group 
+    margin-bottom: 0px
+    &--mb24
+        margin-bottom: 24px
+.form-control
+    background-color: $white!important
+    border-radius: 2px 
+    padding: 12px 16px
+    height: 48px
+    font-family: Inter
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 24px
+    border-color: $lineBorders
+    color: $primaryDark!important
+    margin-bottom: 0px
+
+    &:focus
+        box-shadow: none
+        border-color: $accentDark
+    &:focus 
+        border-color: $accentDark
+    &:disabled
+        background-color: $background!important
+        border: none 
+
+.form-label 
+    font-size: 16px
+    line-height: 24px
+    color: $primaryLight
+    margin-bottom: 8px
+
+.form-control.is-invalid
+    background-image: none
+    &:focus 
+        box-shadow: none
+
+.invalid-feedback
+    margin-top: 8px
+    font-size: 12px
+    line-height: 16px
+    color: $errorColor
+
+.password-wrap
+    position: relative 
+    &__img 
+        position: absolute 
+        top: 16px 
+        right: 16px
+        cursor: pointer 
+
+.custom-tooltip 
+    &__img  
+        cursor: pointer 
+        margin-right: 4px
+
+.popover
+    border: none 
+    &-body 
+        padding: 10px 
+        background-color: $background
+        font-weight: normal
+        font-size: 14px
+        line-height: 20px
+        color: $primaryLight
+        width: 227px
+        border-radius: 2px
+
+.popover[data-popper-placement^=right]
+    margin-left: 18px!important
+    .arrow 
+        left: -8px
+        transform: translate(0, -50%)!important
+        margin-left: -8px
+        top: 50%!important
+.popover[data-popper-placement^=top]
+    margin-left: 5px!important
+    .arrow 
+        bottom: -16px!important
+        transform: rotate(-90deg)!important
+        left: 50%!important
+        margin-left: -8px!important
+    .popover-body 
+        box-shadow: 0px 2px 8px rgba(12, 18, 22, 0.24)
+
+.arrow 
+    display: block
+    width: 8px
+    height: 24px
+    background: transparent url('../assets/imgs/tooltipArrow.svg') no-repeat
+    // 
+
+
+.container-custom 
+    display: block
+    position: relative
+    padding-left: 35px
+    margin-bottom: 12px
+    cursor: pointer
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 20px
+
+
+.container-custom input 
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: 20px
+  width: 20px
+  background-color: $white
+  border: 1px solid $placeholder
+  border-radius: 2px
+
+
+.container-custom:hover input ~ .checkmark 
+    border-color: $accentDark
+
+
+.container-custom input:checked ~ .checkmark 
+  background-color: $accentDark
+
+.checkmark:after 
+  content: ""
+  position: absolute
+  display: none
+
+.container-custom input:checked ~ .checkmark:after 
+  display: block
+
+.container-custom .checkmark:after 
+    top: -1px
+    left: -1px
+    width: 20px
+    height: 20px
+    background-color: $white 
+    background: $white url('../assets/imgs/checkmarkActive.svg') no-repeat
+
+.form-check-input
+    width: 20px
+    height: 20px
+.form-check-label
+    font-size: 14px
+    line-height: 20px
+    color: $primaryDark
+    margin-left: 12px
+.form-check-input
+    margin-top: 0

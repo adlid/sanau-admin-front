@@ -1,0 +1,216 @@
+.dashboard_1_line
+    .chartjs-render-monitor
+        width: 300px !important
+        height: 150px !important
+    .pie
+        display: grid
+        grid-template-columns: 1fr 220px
+    p
+        margin-bottom: 0px
+    display: grid
+    grid-template-columns: 1.3fr 1fr 1fr 1fr
+    grid-gap: 20px
+    &__block
+        background: #FFFFFF
+        padding: 20px
+        &_header
+            display: flex
+            align-items: center
+            &__text
+                margin-left: 24px
+                .title
+                    font-size: 16px
+                    line-height: 24px
+                    font-weight: 500
+                    margin-bottom: 4px
+                .value
+                    font-size: 20px
+                    line-height: 28px
+                    font-weight: 600 
+        &_footer
+            &__text
+                margin-bottom: 8px
+                display: flex
+                justify-content: space-between
+                .text
+                    font-size: 14px
+                    line-height: 16px
+                    font-weight: 400
+                .value_success
+                    color: #31B77E
+                .value_inactive
+                    color: #8A93A2
+                .value_error
+                    color: #EB5757
+    &_pie_footer
+        display: flex
+        flex-direction: column
+        gap: 16px
+        &_title
+            display: flex
+            gap: 16px
+    
+    .round_big
+        width: 16px
+        height: 16px
+        border-radius: 100%
+    .blue
+        background: #18A0FB
+    .red
+        background: #EB5757
+    .darkBlue
+        background: #355169
+
+.dashboard_2_line
+    p
+        margin-bottom: 0px
+    margin-top: 20px
+    background: #FFFFFF
+    &__header
+        padding: 20px 20px 0px
+        font-size: 20px
+        line-height: 28px
+        font-weight: 600
+    &__info
+        padding: 0px 20px 20px
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: 50px
+        justify-content: space-between
+        .info_block
+            &__title
+               font-size: 16px
+               line-height: 24px
+               font-weight: 500
+               margin-bottom: 4px
+            &__value
+               font-size: 28px
+               line-height: 42px
+               font-weight: 500
+            &__indications
+                display: grid
+                grid-row-gap: 8px
+                &_block
+                    display: flex
+                    justify-content: space-between
+                    &__text
+                        display: flex
+                        align-items: center
+                        color: #8A93A2
+                        font-size: 14px
+                        line-height: 16px
+                        font-weight: 400 
+            &__progress
+                margin-top: 8px
+                margin-bottom: 8px
+                background: #D7E2F2
+                height: 12px
+                width: 100%
+                display: flex
+                gap: 2px
+                &_block
+                    border-radius: 2px
+    .round_sm
+        width: 8px
+        height: 8px
+        border-radius: 100%
+        margin-right: 8px
+    .blue
+        background: #18A0FB
+    .red
+        background: #EB5757
+    .green
+        background: #31B77E
+    .darkBlue
+        background: #355169
+    .grey
+        background: #8A93A2
+        
+.dashboard_3_line
+    p
+        margin-bottom: 0px
+    margin-top: 20px
+    background: #FFFFFF
+    &__header
+        padding: 20px 20px 0px
+        font-size: 20px
+        line-height: 28px
+        font-weight: 600
+    &__info
+        padding: 0px 20px 20px
+        display: flex
+        flex-wrap: wrap
+        gap: 20px
+        .info_block
+            display: flex
+            justify-content: space-between
+            width: 296px
+            padding: 20px
+            border: 1px solid #D7E2F2
+            border-radius: 2px
+            &__title
+               font-size: 16px
+               line-height: 24px
+               font-weight: 500
+               margin-bottom: 4px
+            &__value
+               font-size: 12px
+               line-height: 16px
+               font-weight: 600
+               color: #31B77E
+
+@media (max-width: 1600px)
+    .dashboard_1_line
+        display: grid
+        grid-template-columns: 1.3fr 1fr 1fr 1fr
+        grid-gap: 20px
+        .pie
+            display: grid
+            grid-template-columns: 1fr
+        &__block
+            background: #FFFFFF
+            padding: 20px
+            &_header
+                display: flex
+                flex-direction: column
+                align-items: center
+                &__text
+                    margin-top: 20px
+                    margin-left: 0px
+
+@media (max-width: 1350px)
+    .dashboard_1_line
+        grid-template-columns: 1fr
+        &__block 
+            &_header
+                display: flex 
+                flex-direction: unset
+                align-items: center
+                &__text
+                    margin-top: 20px
+                    margin-left: 0px
+        .pie
+            grid-template-columns: 1fr 220px
+    
+    .dashboard_2_line
+        &__info
+            display: grid
+            grid-template-columns: 1fr 1fr
+    
+    .dashboard_3_line
+        &__info
+            .info_block 
+                width: 100%
+
+@media (max-width: 600px)
+    .dashboard_1_line
+        .pie
+            grid-template-columns: 1fr
+    .dashboard_2_line
+        &__info
+            display: grid
+            grid-template-columns: 1fr
+
+
+
+            

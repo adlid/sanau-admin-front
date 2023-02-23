@@ -1,0 +1,82 @@
+.uspdLogs-list 
+    height: 100%
+    background-color: $white 
+    flex-grow: 1
+    &__table-block
+        margin-top: 16px
+        flex-grow: 1 
+        max-height: calc(100% - 107px)
+    &__table-group
+        margin-bottom: 14px
+        padding-left: 15px
+        padding-right: 15px
+    &__card-title
+        font-weight: 500
+        font-style: normal
+        font-size: 14px
+        line-height: 16px
+        text-align: center
+        vertical-align: middle
+    &__wrap 
+        overflow-y: scroll
+        overflow-x: hidden
+        -ms-overflow-style: none
+        scrollbar-width: none
+        max-height: calc(100% - 50px)
+        &::-webkit-scrollbar
+            display: none
+    &__preloader 
+        text-align: center
+        margin-top: 25px
+    &__pagination
+        height: 35px
+        margin-top: 16px
+
+.uspdTable-group
+    &__column
+        align-self: center
+    &__column-checkbox
+        text-align: center
+
+.uspdLogs
+    p
+        margin-bottom: 0px
+    position: relative
+    height: calc(100vh - 124px)
+    display: grid
+    gap: 20px
+    grid-template-columns: 420px 1fr
+    .headingText
+        font-size: 14px
+        line-height: 16px
+        font-weigth: 400
+        color: $secondary
+    &_left
+        padding: 20px
+        border-radius: 2px
+        height: 100%
+        background: $white
+    &_right
+        height: 100%
+        .headingTitle
+            font-size: 20px
+            line-height: 28px
+            font-weigth: 600
+            color: $primaryDark
+        .headingLink
+            font-size: 14px
+            line-height: 16px
+            font-weigth: 400
+            color: $blueTab
+            text-decoration: underline
+            cursor: pointer
+        &__header
+            border-radius: 2px
+            background: $white
+            margin-bottom: 16px
+            padding: 16px 20px
+        &__body
+            padding: 16px 20px
+            border-radius: 2px
+            background: $white
+    

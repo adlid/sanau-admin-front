@@ -1,0 +1,223 @@
+.power_create_group
+    &__table-block 
+        margin: 30px 5px
+        flex-grow: 1
+        height: 100%
+        max-height: calc(100% - 210px)
+        .checkbox-table
+            cursor: pointer
+            width: 20px
+            height: 20px
+            border-radius: 2px
+            border: 1px solid $placeholder
+            vertical-align: middle 
+    &__table-group
+        margin-bottom: 14px 
+        &__column
+            align-self: center
+        &__column-checkbox
+            text-align: center
+
+
+    &__card-title
+        font-weight: 500
+        font-style: normal
+        font-size: 14px
+        line-height: 16px
+        text-align: center
+        vertical-align: middle
+    &__wrap  
+        overflow-y: scroll
+        overflow-x: hidden
+        -ms-overflow-style: none
+        scrollbar-width: none
+        max-height: calc(100% - 27px)
+        &::-webkit-scrollbar
+            display: none 
+    &__filter-block
+        border-radius: 2px
+        box-shadow: 0px 2px 8px rgba(12, 18, 22, 0.24)
+        width: 350px
+        background: #253D51
+        padding: 20px
+        &__title
+            font-size: 16px
+            line-height: 24px
+            color: #FFFFFF
+            margin-bottom: 12px
+        &__time 
+            .MuiInputBase-input
+                color: #FFFFFF
+        &__selectMenu
+            background: #355169
+            padding: 0px
+        &__selectTitle
+            color: #FFFFFF
+            margin-bottom: 0px
+            padding: 12px 16px 8px
+            font-size: 14px
+            line-height: 16px
+        &__selectText
+            font-size: 14px
+            line-height: 20px
+            color: #FFFFFF
+        &__checkbox
+            color: #FFFFFF
+            margin-bottom: 12px
+            .form-check-label
+                color: #FFFFFF
+    &__sort-block  
+        width: 180px
+        box-shadow: 0px 2px 8px rgba(12, 18, 22, 0.24)
+        background: #253D51
+        padding: 16px 16px 4px
+        border-radius: 2px
+        &__checkbox
+            color: #FFFFFF
+            margin-bottom: 12px
+            .form-check-label
+                color: #FFFFFF
+    &__filter-btn
+        border-radius: 0px 
+        background: #355169 !important
+        height: 100%
+        cursor: pointer
+        &--params 
+            display: flex
+            width: 48px
+            height: 38px
+            display: flex
+            justify-content: center
+            align-items: center
+
+    .arrIcon
+        transition-duration: 0.3s
+        transition-property: transform
+        &--rotated 
+            transform: rotate(-180deg)
+    .sortBtn
+        height: 100%
+        border-radius: 0px
+        background: #355169 
+        width: 171px
+        display: flex
+        justify-content: space-between
+        align-items: center 
+
+    &__preloader 
+        text-align: center
+        margin-top: 25px
+    .loader
+        margin-top: 100px
+        text-align: center 
+    height: 100% 
+    &__searchDropDown
+        width: 180px
+        padding: 16px
+        .dropDownItem
+            margin-bottom: 12px 
+            &:last-child
+                margin-bottom: 0px
+    &__dropDownMenu
+        width: 150px
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        .dropDownItem
+            padding: 17px
+            cursor: pointer
+            &:hover
+                background: $background   
+    &__input
+        width: 100%
+        height: 48px
+        font-size: 16px
+        line-height: 24px
+        border-radius: 2px
+        border-top: 1px solid $placeholder
+        border-right: 1px solid $placeholder
+        border-bottom: 1px solid $placeholder
+        border-left: unset !important
+    &__header
+        background-color: $white
+        margin-bottom: 0px!important
+    &__wrap 
+        margin-top: 8px
+        background-color: $white
+        height: calc(100% - 126px)
+        .tab-content
+            padding: 0px
+    &__btns
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 20px   
+        background-color: $white
+        border-top: 1px solid $lineBorders
+    &__title 
+        font-weight: 600
+        font-size: 20px
+        line-height: 28px
+        display: block
+        padding: 20px
+        background-color: $white
+        margin: 0
+        .dropDownMenu_selected
+            display: flex 
+            align-items: center
+            padding: 15.5px
+            border-radius: 2px 0px 0px 2px
+            border-top: 1px solid $placeholder
+            border-left: 1px solid $placeholder
+            border-bottom: 1px solid $placeholder
+            background: $background
+            cursor: pointer
+        .searchDropDownMenu_selected   
+            display: flex
+            justify-content: space-between 
+            position: absolute
+            left: -1px
+            width: 180px 
+            padding: 11.1px
+            border-left: unset
+            border-right: 1px solid $placeholder
+            .title
+                font-size: 14px
+                line-height: 16px
+                margin-bottom: 0px
+                text-overflow: ellipsis
+                overflow: hidden
+                white-space: nowrap
+
+        .titleInputBox
+            width: 595px
+            max-width: 595px
+            display: flex
+            align-items: center
+    &__subtitleBox
+        padding: 20px 
+        .subtitle 
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            color: #253D51
+
+    &__popover 
+        background-color: $primaryDark
+        padding: 20px
+        width: 350px
+        .form-check-label
+            color: #fff
+
+
+
+    .divider
+        height: 8px
+        width: 100%
+        background: #EBEDEF 
+    .tab-content
+        padding-left: 0px !important
+        padding-right: 0px !important
+    .nav-tabs
+        border: unset !important
+        margin-bottom: 0px
+

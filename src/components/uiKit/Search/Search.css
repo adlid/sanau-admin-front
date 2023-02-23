@@ -1,0 +1,11 @@
+.search-input {
+  background: url("./../../../assets/imgs/searchIcon.svg") no-repeat scroll 7px 7px;
+  width: 57%;
+  height: 40px;
+}
+
+.search-input input {
+  font-size: 14px;
+  padding-left: 38px !important;
+}
+/*# sourceMappingURL=Search.css.map */

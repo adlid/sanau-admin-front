@@ -1,0 +1,69 @@
+.info-gas-lorawan-udp-concentrators-list
+    width: 300px
+    padding: 20px
+    background-color: #fff
+    margin-right: 20px
+    max-height: 100%
+
+    &__header 
+        margin-bottom: 24px
+        display: flex
+        flex-direction: column
+
+        .search-input
+            margin-right: 12px
+        .add-btn
+            width: 100% !important
+            justify-content: center
+
+    &__quantity 
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        margin-bottom: 24px
+    &__item 
+        cursor: pointer
+        background-color: $white
+        padding: 8px 12px
+        &:hover 
+            background-color: $background
+        span
+            font-weight: 500
+            font-size: 14px
+            color: $primaryDark
+    &__icon 
+        background-color: transparent
+        width: 24px
+        height: 24px
+        border-radius: 4px
+        &--hovered
+            background-color: $accentDark
+
+            
+
+
+.gas-lorawan-udp-concentrator-popover 
+    background-color: $white
+    width: 180px
+    border-radius: 0 0 2px 2px
+    filter: drop-shadow(0px 2px 8px rgba(12, 18, 22, 0.24))
+    &__item 
+        padding: 12px 16px 
+        cursor: pointer 
+        &:hover 
+            background-color: $background
+        span 
+            margin-left: 10px
+    &__container 
+        left: -70px!important
+ 
+@media (max-width: 1680px)
+    .info-gas-udp-concentrators-list
+        &__header
+            flex-direction: column
+            .search-input
+                margin-bottom: 12px
+                margin-right: 0
+                width: 100%
+
+
