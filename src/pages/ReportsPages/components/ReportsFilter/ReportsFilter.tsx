@@ -95,6 +95,7 @@ export const ReportsFilter: FC<IReportsFilter> = (props) => {
               onClick={getReport}
               isDisabled={
                 (currentReportType === "Суточный баланс электричества"
+                        || currentReportType === "Отчет отсутствующими показаниями"
                   || currentReportType === "новый отчет 1"
                   || currentReportType === "новый отчет 2"
                   || currentReportType === "новый отчет 3"

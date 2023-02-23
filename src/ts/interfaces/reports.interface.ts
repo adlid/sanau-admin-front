@@ -6,6 +6,15 @@ export interface IDownloadReportParamsProps {
   to: DateType;
 }
 
+export interface IDaylyReportParamsProps {
+  from: DateType;
+  to: DateType;
+}
+export interface IBrokenReportParamsProps {
+  from: DateType;
+  to: DateType;
+  groupId:string
+}
 export interface IDownloadAllElectrocityReportParamsProps {
   from: DateType;
   to: DateType;

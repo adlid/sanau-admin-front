@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { reportsState } from "./reports.state";
 import {
   getAllUspdConcentrators,
-  saveAllElectocityReportExcel,
+  saveAllElectocityReportExcel, saveBrokenExcel,
   saveDiffUSPDLorawanReportExcel,
   saveGasReportExcelThunk,
   saveLorawanWaterReportsExcelThunk,
@@ -122,6 +122,10 @@ const reportsSlice = createSlice({
     })
 
     builder.addCase(saveNewReport1Excel.fulfilled, (_, action) => {
+      const blob = new Blob([action.payload])
+      download(blob, 'Отчет.xlsx')
+    });
+    builder.addCase(saveBrokenExcel.fulfilled, (_, action) => {
       const blob = new Blob([action.payload])
       download(blob, 'Отчет.xlsx')
     });

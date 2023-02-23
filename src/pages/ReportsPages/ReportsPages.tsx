@@ -23,18 +23,18 @@ import {
   resetReportsState,
 } from "../../store/slicesAndThunks/reports/reports.slices";
 import {
-  saveAllElectocityReportExcel,
-  saveDiffUSPDLorawanReportExcel,
-  saveGasReportExcelThunk,
-  saveLorawanWaterReportsExcelFolderThunk,
-  saveLorawanWaterReportsExcelThunk,
-  saveNewReport1Excel,
-  saveNewReport2Excel,
-  saveNewReport3Excel,
-  saveNewReport4Excel,
-  saveNewReport5Excel,
-  saveNewReport6Excel,
-  saveUSPDReportExcel, saveWaterReportsExcelThunk, saveWaterReportsFolderExcelThunk,
+    saveAllElectocityReportExcel, saveBrokenExcel, saveDaylyExcel,
+    saveDiffUSPDLorawanReportExcel,
+    saveGasReportExcelThunk,
+    saveLorawanWaterReportsExcelFolderThunk,
+    saveLorawanWaterReportsExcelThunk,
+    saveNewReport1Excel,
+    saveNewReport2Excel,
+    saveNewReport3Excel,
+    saveNewReport4Excel,
+    saveNewReport5Excel,
+    saveNewReport6Excel,
+    saveUSPDReportExcel, saveWaterReportsExcelThunk, saveWaterReportsFolderExcelThunk,
 } from "../../store/slicesAndThunks/reports/reports.thunks";
 import { removeSelectAllMeters as removeTCPMeters } from "../../store/slicesAndThunks/powerConcentrator/gprs/gprs.slice";
 import { removeSelectAllMeters as removeLoraMeters } from "../../store/slicesAndThunks/powerConcentrator/lorawanUdpDevice/lorawanUdpDevice.slice";
@@ -46,6 +46,8 @@ import { ConcentratorPowerCountersChildren } from "./components/power/Concentrat
 import { reportsAPI } from "../../api/reports.api";
 import { ConcentratorGasCountersChildren } from "./components/power/ConcentratorGasCountersChildren/ConcentratorGasCountersChildren";
 import { ConcentratorGasCounters } from "./components/power/ConcentratorGasCounters/ConcentratorGasCounters";
+import {Col, Row, Spinner} from "react-bootstrap";
+import {ConcentratorWaterCounterListItem} from "./components/power/ConcentratorWaterCounterListItem";
 
 interface IReportsPagesProps { }
 
@@ -78,7 +80,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [currentGroup, setCurrentGroup] = useState<string>("power");
   const [currentReportType, setCurrentReportType] = useState<string>("");
-
+    console.log(currentReportType)
   const addIdToArrCallBack = (id: string | number) => dispatch(addIdToArr(id));
   const removeIdFromArrCallBack = (id: string | number) => dispatch(removeIdFromArr(id));
 
@@ -104,7 +106,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
       enqueueSnackbar("Выберите период", { variant: "error" });
       return;
     }
-
+    console.log(currentReportType)
     setLoading(true);
     if (currentReportType === "Баланс электроэнергии по УСПД") {
       for (let i: number = 0; i < selectedId.length; i++) {
@@ -183,6 +185,21 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
         );
       }
 
+    }else if(currentReportType === 'Отчет отсутствующими показаниями'){
+            await dispatch(
+                saveBrokenExcel({
+                    from: startDate,
+                    to: finishDate,
+                    groupId:selectedFolders[0]==='299af6f1-038b-4bd1-bd37-771986bddfa8' ? "2": "1"
+                })
+            )
+    } else if(currentReportType === 'Суточный архив данных'){
+        await dispatch(
+            saveDaylyExcel({
+                from: startDate,
+                to: finishDate,
+            })
+        )
     } else if (currentReportType === "новый отчет 1") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
@@ -379,6 +396,18 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
               />
             )}
 
+              {currentReportType === 'Суточный архив данных' && (id && index ? <>
+                  <ConcentratorPowerCountersChildren index={+index} keyOfTree={id} />
+              </> : <ConcentratorPowerCounters
+                  addKeyToArrCallBack={addIdToArrCallBack}
+                  removeKeyFromArrCallBack={removeIdFromArrCallBack}
+              />)}
+              {currentReportType === 'Отчет отсутствующими показаниями' && (id && index ? <>
+                  <ConcentratorPowerCountersChildren index={+index} keyOfTree={id} />
+              </> : <ConcentratorPowerCounters
+                  addKeyToArrCallBack={addIdToArrCallBack}
+                  removeKeyFromArrCallBack={removeIdFromArrCallBack}
+              />)}
             {/* СУТОЧНЫЙ БАЛАНС ЭЛЕКТРИЧЕСТВА */}
             {currentReportType === "Суточный баланс электричества" &&
               (id && index ? <>

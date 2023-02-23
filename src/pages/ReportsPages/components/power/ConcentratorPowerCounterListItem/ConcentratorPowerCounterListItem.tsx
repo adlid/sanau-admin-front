@@ -17,7 +17,7 @@ type PropsType = {
 //@ts-ignore
 export const ConcentratorPowerCounterListItem: FC<PropsType> = (props) => {
   const { key, concentratorData, setSelectedGatewayFunc, index, depthIndex } = props;
-  
+
   const [open, setOpen] = useState(false)
   const handleClick = () => {
     if(!concentratorData.haveParent) {
@@ -59,7 +59,9 @@ export const ConcentratorPowerCounterListItem: FC<PropsType> = (props) => {
             className="checkbox-table"
             checked={selectedFolders.includes(concentratorData.key as string)}
             onChange={(e) => {
-                if (e.target.checked) dispatch(addKeyToFolders(concentratorData.key as string));
+                if (e.target.checked) {
+                  console.log(concentratorData)
+              dispatch(addKeyToFolders(concentratorData.key as string));}
                 else dispatch(removeKeyFromFolder(concentratorData.key as string));
             }}
           />

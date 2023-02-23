@@ -90,6 +90,39 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
         {currentGroup === "power" ? (
           <>
             <div
+                className={
+                  currentReportType === "Суточный архив данных" ? "report-types_box selected" : "report-types_box"
+                }
+                onClick={() => {
+                  setCurrentReportType("Суточный архив данных");
+                  history.push("/admin/reports?type=DAY_ARCHIVE");
+                }}
+            >
+              <p className="report-types_box__reportTitle">Суточный архив данных</p>
+            </div>
+            <div
+                className={
+                  currentReportType === "Отчет для биллинга" ? "report-types_box selected" : "report-types_box"
+                }
+                onClick={() => {
+                  setCurrentReportType("Отчет для биллинга");
+                  history.push("/admin/reports?type=BILLING");
+                }}
+            >
+              <p className="report-types_box__reportTitle">Отчет для биллинга</p>
+            </div>
+            <div
+                className={
+                  currentReportType === "Отчет отсутствующими показаниями" ? "report-types_box selected" : "report-types_box"
+                }
+                onClick={() => {
+                  setCurrentReportType("Отчет отсутствующими показаниями");
+                  history.push("/admin/reports?type=SHOW");
+                }}
+            >
+              <p className="report-types_box__reportTitle">Отчет отсутствующими показаниями</p>
+            </div>
+            <div
               className={
                 currentReportType === "Баланс электроэнергии по УСПД" ? "report-types_box selected" : "report-types_box"
               }

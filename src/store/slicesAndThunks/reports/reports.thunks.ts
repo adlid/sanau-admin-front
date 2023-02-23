@@ -5,10 +5,16 @@ import { reportsAPI } from "../../../api/reports.api";
 import { powerMeterTransmissionDeviceConcentratorAPI } from "../../../api/concentrator/powerMeterTransmissionDeviceConcentratorAPI";
 // ts
 import {
-  IDownloadAllElectrocityReportParamsProps,
-  IDownloadNewReport2ParamsProps,
-  IDownloadNewReportParamsProps,
-  IDownloadReportParamsProps, IDownloadReportWaterMeters, IDownloadReportWaterMetersFolders, IGasReportParams, IGetTokenLorawanWater,
+    IBrokenReportParamsProps,
+    IDaylyReportParamsProps,
+    IDownloadAllElectrocityReportParamsProps,
+    IDownloadNewReport2ParamsProps,
+    IDownloadNewReportParamsProps,
+    IDownloadReportParamsProps,
+    IDownloadReportWaterMeters,
+    IDownloadReportWaterMetersFolders,
+    IGasReportParams,
+    IGetTokenLorawanWater,
 } from "../../../ts/interfaces/reports.interface";
 
 //concentrator info
@@ -107,6 +113,7 @@ export const saveAllElectocityReportExcel = createAsyncThunk(
   }
 );
 
+
 export const saveWaterReportsFolderExcelThunk = createAsyncThunk('saveWaterReportsFolderExcelThunk',
   async (data: IDownloadReportWaterMetersFolders, { dispatch }) => {
     try {
@@ -184,6 +191,46 @@ export const saveLorawanWaterReportsExcelFolderThunk = createAsyncThunk(
   }
 );
 
+export const saveDaylyExcel = createAsyncThunk(
+    "saveDaylyExcel",
+    async (bodyParams: IDaylyReportParamsProps, thunkAPI) => {
+        try {
+            const response = await reportsAPI.downloadDaylyReport(bodyParams);
+            return response.data;
+        } catch (error: any) {
+            //notistack
+            thunkAPI.dispatch(
+                addNotistack({
+                    statusCode: "",
+                    statusText: error.data.message,
+                    variant: "error",
+                })
+            );
+
+            return thunkAPI.rejectWithValue(error.data.status);
+        }
+    }
+);
+export const saveBrokenExcel = createAsyncThunk(
+    "saveBrokenExcel",
+    async (bodyParams: IBrokenReportParamsProps, thunkAPI) => {
+        try {
+            const response = await reportsAPI.downloadShowReport(bodyParams);
+            return response.data;
+        } catch (error: any) {
+            //notistack
+            thunkAPI.dispatch(
+                addNotistack({
+                    statusCode: "",
+                    statusText: error.data.message,
+                    variant: "error",
+                })
+            );
+
+            return thunkAPI.rejectWithValue(error.data.status);
+        }
+    }
+);
 export const saveNewReport1Excel = createAsyncThunk(
   "saveNewReport1Excel",
   async (bodyParams: IDownloadNewReportParamsProps, thunkAPI) => {

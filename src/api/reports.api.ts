@@ -1,6 +1,8 @@
 import { instance } from "./axios.instance";
 // ts
 import {
+  IBrokenReportParamsProps,
+  IDaylyReportParamsProps,
   IDownloadAllElectrocityReportParamsProps,
   IDownloadNewReport2ParamsProps,
   IDownloadNewReportParamsProps,
@@ -64,6 +66,27 @@ export const reportsAPI = {
     }
   },
 
+  downloadDaylyReport: async (bodyParams: IDaylyReportParamsProps) => {
+    try {
+      return await instance.post(`record/read/group/last`, bodyParams, { responseType: "arraybuffer" });
+    } catch (error: any) {
+      throw error.response;
+    }
+  },
+  downloadShowReport: async (bodyParams: IBrokenReportParamsProps) => {
+    try {
+      return await instance.post(`record/read/group/broken`, bodyParams, { responseType: "arraybuffer" });
+    } catch (error: any) {
+      throw error.response;
+    }
+  },
+  downloadBillingReport: async (bodyParams: IDownloadNewReportParamsProps) => {
+    try {
+      return await instance.post(`record/read/group/last`, bodyParams, { responseType: "arraybuffer" });
+    } catch (error: any) {
+      throw error.response;
+    }
+  },
   downloadNewReport1: async (bodyParams: IDownloadNewReportParamsProps) => {
     try {
       return await instance.post(`/record/read/full/suntown`, bodyParams, { responseType: "arraybuffer" });
