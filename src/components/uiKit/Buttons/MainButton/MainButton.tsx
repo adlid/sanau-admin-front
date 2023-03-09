@@ -10,6 +10,7 @@ type StylesType = {
 type PropsType = {
   title: any;
   isSecondary?: boolean;
+  currentReportType?:string;
   isDisabled?: boolean;
   isAlarm?: boolean;
   fetching?: boolean;
@@ -24,13 +25,17 @@ const MainButton: FC<PropsType> = (props) => {
     isAlarm,
     isDisabled = false,
     fetching,
+    currentReportType,
     style: { width, height, fontSize },
     onClick,
   } = props;
 
   return (
     <Button
-      onClick={(e) => onClick && !isDisabled && onClick(e)}
+      onClick={(e) => {
+          console.log('currentReportType', currentReportType)
+          onClick && !isDisabled && onClick(e)
+      }}
       style={{
         height: `${height}px`,
         width: `${width}px`,

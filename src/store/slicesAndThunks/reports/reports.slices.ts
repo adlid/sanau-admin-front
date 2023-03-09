@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { reportsState } from "./reports.state";
 import {
   getAllUspdConcentrators,
-  saveAllElectocityReportExcel, saveBrokenExcel,
+  saveAllElectocityReportExcel, saveBillingExcelBDF, saveBillingExcelXLSX, saveBrokenExcel, saveDaylyExcel,
   saveDiffUSPDLorawanReportExcel,
   saveGasReportExcelThunk,
   saveLorawanWaterReportsExcelThunk,
@@ -126,6 +126,18 @@ const reportsSlice = createSlice({
       download(blob, 'Отчет.xlsx')
     });
     builder.addCase(saveBrokenExcel.fulfilled, (_, action) => {
+      const blob = new Blob([action.payload])
+      download(blob, 'Отчет.xlsx')
+    });
+    builder.addCase(saveDaylyExcel.fulfilled, (_, action) => {
+      const blob = new Blob([action.payload])
+      download(blob, 'Отчет.xlsx')
+    });
+    builder.addCase(saveBillingExcelBDF.fulfilled, (_, action) => {
+      const blob = new Blob([action.payload])
+      download(blob, 'Отчет.dbf')
+    });
+    builder.addCase(saveBillingExcelXLSX.fulfilled, (_, action) => {
       const blob = new Blob([action.payload])
       download(blob, 'Отчет.xlsx')
     });

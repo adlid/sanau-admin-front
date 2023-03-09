@@ -80,9 +80,16 @@ export const reportsAPI = {
       throw error.response;
     }
   },
-  downloadBillingReport: async (bodyParams: IDownloadNewReportParamsProps) => {
+  downloadBillingReportBDF: async (bodyParams: IDaylyReportParamsProps) => {
     try {
-      return await instance.post(`record/read/group/last`, bodyParams, { responseType: "arraybuffer" });
+      return await instance.post(`record/read/full/latest-report-without-null-dbf`, bodyParams, { responseType: "arraybuffer" });
+    } catch (error: any) {
+      throw error.response;
+    }
+  },
+  downloadBillingReportXLSX: async (bodyParams: IDaylyReportParamsProps) => {
+    try {
+      return await instance.post(`record/read/full/latest-report-without-null-xlsx`, bodyParams, { responseType: "arraybuffer" });
     } catch (error: any) {
       throw error.response;
     }

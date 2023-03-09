@@ -7,6 +7,7 @@ import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import { icons } from "../../../../utils/icons/icons";
 import { MainButton } from "../../../../components/uiKit/Buttons/MainButton";
 import { Spinner } from "react-bootstrap";
+import {saveBillingExcelXLSX} from "../../../../store/slicesAndThunks/reports/reports.thunks";
 
 interface IReportsFilter {
   loading: boolean;
@@ -50,7 +51,7 @@ export const ReportsFilter: FC<IReportsFilter> = (props) => {
 
   const [openFirstCalendar, setOpenFirstCalendar] = useState(false);
   const [openSecondCalendar, setOpenSecondCalendar] = useState(false);
-
+  console.log(currentReportType)
   return (
     <div className="reports__header">
       <p className="reports__header_title">{currentReportType ? currentReportType : "Отчет не выбран"}</p>
@@ -90,26 +91,35 @@ export const ReportsFilter: FC<IReportsFilter> = (props) => {
           <div className="mr12px" />
           <div>
             <MainButton
+                currentReportType={currentReportType}
               title={loading ? <Spinner animation="border" size="sm" /> : "Сформировать отчет"}
               style={{ width: 179, height: 40, fontSize: 14 }}
               onClick={getReport}
               isDisabled={
-                (currentReportType === "Суточный баланс электричества"
-                        || currentReportType === "Отчет отсутствующими показаниями"
-                  || currentReportType === "новый отчет 1"
-                  || currentReportType === "новый отчет 2"
-                  || currentReportType === "новый отчет 3"
-                  || currentReportType === "новый отчет 4"
-                  || currentReportType === "новый отчет 5"
-                  || currentReportType === "новый отчет 6"
-                  || currentReportType === "Отчет по газосчетчикам"
+                (
+                    currentReportType === "Отчет для биллинга" || currentReportType === "Суточный архив данных" ? (
+                        false
+                    ) : (
+                        (currentReportType === "Суточный баланс электричества"
+
+                            || currentReportType === "Отчет отсутствующими показаниями"
+                            || currentReportType === "новый отчет 1"
+                            || currentReportType === "новый отчет 2"
+                            || currentReportType === "новый отчет 3"
+                            || currentReportType === "новый отчет 4"
+                            || currentReportType === "новый отчет 5"
+                            || currentReportType === "новый отчет 6"
+                            || currentReportType === "Отчет по газосчетчикам"
+                        )
+                        || (currentReportType === 'Отчёт по водосчетчикам' || currentReportType === 'Баланс воды с разностью')
+                            ? selectedMetersUSPD.length === 0 &&
+                            selectedMetersTCPIP.length === 0 &&
+                            selectedMetersLorawan.length === 0 &&
+                            selectedFolders.length === 0
+                            : selectedId.length === 0
+                    )
                 )
-                  || (currentReportType === 'Отчёт по водосчетчикам' || currentReportType === 'Баланс воды с разностью')
-                  ? selectedMetersUSPD.length === 0 &&
-                  selectedMetersTCPIP.length === 0 &&
-                  selectedMetersLorawan.length === 0 &&
-                  selectedFolders.length === 0
-                  : selectedId.length === 0
+
               }
             />
           </div>

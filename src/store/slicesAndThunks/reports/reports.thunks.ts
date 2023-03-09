@@ -211,6 +211,46 @@ export const saveDaylyExcel = createAsyncThunk(
         }
     }
 );
+export const saveBillingExcelBDF = createAsyncThunk(
+    "saveBillingExcelBDF",
+    async (bodyParams: IDaylyReportParamsProps, thunkAPI) => {
+        try {
+            const response = await reportsAPI.downloadBillingReportBDF(bodyParams);
+            return response.data;
+        } catch (error: any) {
+            //notistack
+            thunkAPI.dispatch(
+                addNotistack({
+                    statusCode: "",
+                    statusText: error.data.message,
+                    variant: "error",
+                })
+            );
+
+            return thunkAPI.rejectWithValue(error.data.status);
+        }
+    }
+);
+export const saveBillingExcelXLSX = createAsyncThunk(
+    "saveBillingExcelXLSX",
+    async (bodyParams: IDaylyReportParamsProps, thunkAPI) => {
+        try {
+            const response = await reportsAPI.downloadBillingReportXLSX(bodyParams);
+            return response.data;
+        } catch (error: any) {
+            //notistack
+            thunkAPI.dispatch(
+                addNotistack({
+                    statusCode: "",
+                    statusText: error.data.message,
+                    variant: "error",
+                })
+            );
+
+            return thunkAPI.rejectWithValue(error.data.status);
+        }
+    }
+);
 export const saveBrokenExcel = createAsyncThunk(
     "saveBrokenExcel",
     async (bodyParams: IBrokenReportParamsProps, thunkAPI) => {

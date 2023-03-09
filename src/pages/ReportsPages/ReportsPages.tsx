@@ -23,7 +23,7 @@ import {
   resetReportsState,
 } from "../../store/slicesAndThunks/reports/reports.slices";
 import {
-    saveAllElectocityReportExcel, saveBrokenExcel, saveDaylyExcel,
+    saveAllElectocityReportExcel, saveBillingExcelBDF, saveBillingExcelXLSX, saveBrokenExcel, saveDaylyExcel,
     saveDiffUSPDLorawanReportExcel,
     saveGasReportExcelThunk,
     saveLorawanWaterReportsExcelFolderThunk,
@@ -200,6 +200,19 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
                 to: finishDate,
             })
         )
+    } else if(currentReportType === 'Отчет для биллинга'){
+        await dispatch(
+            saveBillingExcelBDF({
+                from: startDate,
+                to: finishDate,
+            })
+        )
+        await dispatch(
+            saveBillingExcelXLSX({
+                from: startDate,
+                to: finishDate,
+            })
+        )
     } else if (currentReportType === "новый отчет 1") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
@@ -341,6 +354,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
 
   useEffect(() => {
     dispatch(removeSelectAllConcentrators());
+    console.log(currentReportType)
   }, [currentReportType]);
 
   useEffect(() => {
