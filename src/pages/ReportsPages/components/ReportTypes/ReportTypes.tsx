@@ -170,7 +170,7 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
                 history.push("/admin/reports?type=новый отчет 1");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 1</p>
+              <p className="report-types_box__reportTitle">Суточный архив</p>
             </div>
             <div
               className={
@@ -183,7 +183,7 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
                 history.push("/admin/reports?type=новый отчет 2");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 2</p>
+              <p className="report-types_box__reportTitle">Прямое считывание</p>
             </div>
             <div
               className={
@@ -196,7 +196,7 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
                 history.push("/admin/reports?type=новый отчет 3");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 3</p>
+              <p className="report-types_box__reportTitle">Считывание из архива</p>
             </div>
             <div
               className={
@@ -222,7 +222,7 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
                 history.push("/admin/reports?type=new5");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 5</p>
+              <p className="report-types_box__reportTitle">Сводный отчет</p>
             </div>
             <div
               className={
@@ -235,7 +235,7 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
                 history.push("/admin/reports?type=new6");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 6</p>
+              <p className="report-types_box__reportTitle">Качество показаний</p>
             </div>
           </>
         ) : currentGroup === "water" ? (
