@@ -161,39 +161,39 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
             </div>
             <div
               className={
-                currentReportType === "новый отчет 1"
+                currentReportType === "Суточный архив"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 1");
-                history.push("/admin/reports?type=новый отчет 1");
+                setCurrentReportType("Суточный архив");
+                history.push("/admin/reports?type=Суточный архив");
               }}
             >
               <p className="report-types_box__reportTitle">Суточный архив</p>
             </div>
             <div
               className={
-                currentReportType === "новый отчет 2"
+                currentReportType === "Прямое считывание"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 2");
-                history.push("/admin/reports?type=новый отчет 2");
+                setCurrentReportType("Прямое считывание");
+                history.push("/admin/reports?type=Прямое считывание");
               }}
             >
               <p className="report-types_box__reportTitle">Прямое считывание</p>
             </div>
             <div
               className={
-                currentReportType === "новый отчет 3"
+                currentReportType === "Считывание из архива"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 3");
-                history.push("/admin/reports?type=новый отчет 3");
+                setCurrentReportType("Считывание из архива");
+                history.push("/admin/reports?type=Считывание из архива");
               }}
             >
               <p className="report-types_box__reportTitle">Считывание из архива</p>
@@ -213,12 +213,12 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
             </div>
             <div
               className={
-                currentReportType === "новый отчет 5"
+                currentReportType === "Сводный отчет"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 5");
+                setCurrentReportType("Сводный отчет");
                 history.push("/admin/reports?type=new5");
               }}
             >
@@ -226,12 +226,12 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
             </div>
             <div
               className={
-                currentReportType === "новый отчет 6"
+                currentReportType === "Качество показаний"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 6");
+                setCurrentReportType("Качество показаний");
                 history.push("/admin/reports?type=new6");
               }}
             >

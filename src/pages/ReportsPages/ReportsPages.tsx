@@ -213,7 +213,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
                 to: finishDate,
             })
         )
-    } else if (currentReportType === "новый отчет 1") {
+    } else if (currentReportType === "Суточный архив") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -231,7 +231,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
         })
       );
 
-    } else if (currentReportType === "новый отчет 2") {
+    } else if (currentReportType === "Прямое считывание") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -249,7 +249,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
         })
       );
 
-    } else if (currentReportType === "новый отчет 3") {
+    } else if (currentReportType === "Считывание из архива") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -283,7 +283,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
           parameter: "A+"
         })
       );
-    } else if (currentReportType === "новый отчет 5") {
+    } else if (currentReportType === "Сводный отчет") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -299,7 +299,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
           meterType: meterType,
         })
       );
-    } else if (currentReportType === "новый отчет 6") {
+    } else if (currentReportType === "Качество показаний") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -458,12 +458,12 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
                 removeIdFromArrCallBack={removeIdFromArrCallBack}
               />
             )}
-            {(currentReportType === "новый отчет 1"
-              || currentReportType === "новый отчет 2"
-              || currentReportType === "новый отчет 3"
+            {(currentReportType === "Суточный архив"
+              || currentReportType === "Прямое считывание"
+              || currentReportType === "Считывание из архива"
               || currentReportType === "новый отчет 4"
-              || currentReportType === "новый отчет 5"
-              || currentReportType === "новый отчет 6"
+              || currentReportType === "Сводный отчет"
+              || currentReportType === "Качество показаний"
             ) &&
               (id && index ? <>
                 <ConcentratorPowerCountersChildren index={+index} keyOfTree={id} />
