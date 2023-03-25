@@ -106,7 +106,7 @@ export const ReportsFilter: FC<IReportsFilter> = (props) => {
                             || currentReportType === "Суточный архив"
                             || currentReportType === "Прямое считывание"
                             || currentReportType === "Считывание из архива"
-                            || currentReportType === "новый отчет 4"
+                            || currentReportType === "Месячный архив данных"
                             || currentReportType === "Сводный отчет"
                             || currentReportType === "Качество показаний"
                             || currentReportType === "Отчет по газосчетчикам"

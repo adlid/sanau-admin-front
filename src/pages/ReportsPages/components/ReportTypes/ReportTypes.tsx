@@ -200,16 +200,16 @@ export const ReportTypes: FC<IReportTypes> = (props) => {
             </div>
             <div
               className={
-                currentReportType === "новый отчет 4"
+                currentReportType === "Месячный архив данных"
                   ? "report-types_box selected"
                   : "report-types_box"
               }
               onClick={() => {
-                setCurrentReportType("новый отчет 4");
-                history.push("/admin/reports?type=новый отчет 4");
+                setCurrentReportType("Месячный архив данных");
+                history.push("/admin/reports?type=Месячный архив данных");
               }}
             >
-              <p className="report-types_box__reportTitle">новый отчет 4</p>
+              <p className="report-types_box__reportTitle">Месячный архив данных</p>
             </div>
             <div
               className={

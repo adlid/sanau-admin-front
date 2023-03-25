@@ -269,7 +269,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
           parameter: "A+"
         })
       );
-    } else if (currentReportType === "новый отчет 4") {
+    } else if (currentReportType === "Месячный архив данных") {
       let meters: Array<string> = [];
       if (selectedFolders.length === 0) {
         meters = [...selectedMetersUSPD, ...selectedMetersTCPIP, ...selectedMetersLorawan];
@@ -464,7 +464,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
             {(currentReportType === "Суточный архив"
               || currentReportType === "Прямое считывание"
               || currentReportType === "Считывание из архива"
-              || currentReportType === "новый отчет 4"
+              || currentReportType === "Месячный архив данных"
               || currentReportType === "Сводный отчет"
               || currentReportType === "Качество показаний"
             ) &&
