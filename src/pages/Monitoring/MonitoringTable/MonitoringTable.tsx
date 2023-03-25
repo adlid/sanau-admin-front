@@ -173,7 +173,7 @@ export const MonitoringTable: FC = () => {
                 return (
                   <tr key={meter + index}>
                     <th scope="row" style={{ width: "300px", minWidth: "300px" }}>
-                      {meter.name || "---"}
+                      {meter.name === 'Lorawan'? 'LoRaWAN' : meter.name || "---"}
                     </th>
                     <th scope="row" style={{ width: "120px", minWidth: "120px" }}>
                       {meter.serialNumber || "---"}
