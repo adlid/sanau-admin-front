@@ -9,6 +9,7 @@ export interface IDownloadReportParamsProps {
 export interface IDaylyReportParamsProps {
   from: DateType;
   to: DateType;
+  groupId:string
 }
 export interface IBrokenReportParamsProps {
   from: DateType;

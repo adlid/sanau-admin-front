@@ -198,6 +198,7 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
             saveDaylyExcel({
                 from: startDate,
                 to: finishDate,
+                groupId:selectedFolders[0]==='299af6f1-038b-4bd1-bd37-771986bddfa8' ? "2": "1"
             })
         )
     } else if(currentReportType === 'Отчет для биллинга'){
@@ -205,12 +206,14 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
             saveBillingExcelBDF({
                 from: startDate,
                 to: finishDate,
+                groupId:selectedFolders[0]==='299af6f1-038b-4bd1-bd37-771986bddfa8' ? "2": "1"
             })
         )
         await dispatch(
             saveBillingExcelXLSX({
                 from: startDate,
                 to: finishDate,
+                groupId:selectedFolders[0]==='299af6f1-038b-4bd1-bd37-771986bddfa8' ? "2": "1"
             })
         )
     } else if (currentReportType === "Суточный архив") {
