@@ -254,9 +254,13 @@ export const getXaxisValuesLorawanNew = createSelector(
       if (res.length) {
         const final = res
           .filter((item) => item[selectedGraphName] !== null)
+          .sort((a,b)=>{
+              return moment(a[selectedGraphName].fixedAt).diff(b[selectedGraphName].fixedAt)
+          })
           .map((item) => {
             return moment(item[selectedGraphName].fixedAt).format("DD.MM.YYYY")
           })
+
         return final;
       }
       return []
@@ -271,9 +275,13 @@ export const getYaxisValuesLorawanNew = createSelector(
   getCurrentLorawanGraphData,
   getLorawanSelectedGraph,
   (phase, graphData, selectedGraphName) => {
+      console.log(graphData)
     if (graphData) {
       let res = graphData
         .filter((i) => i[selectedGraphName] !== null)
+          .sort((a,b)=>{
+              return moment(a[selectedGraphName].fixedAt).diff(b[selectedGraphName].fixedAt)
+          })
         .map((data) => {
           if ((selectedGraphName === 'amperage' || selectedGraphName === 'voltage') && data[selectedGraphName]) {
             let temp = data[selectedGraphName];
