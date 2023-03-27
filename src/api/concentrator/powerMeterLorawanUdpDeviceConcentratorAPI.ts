@@ -54,7 +54,15 @@ export const powerMeterLorawanUdpDeviceConcentratorAPI = {
       throw error.response;
     }
   },
+  getLorawanMeterById: async(params:{lorawanId:string}) => {
+    try {
+      return await instance.post(`/admin-system/meter/info/relay?id=${params.lorawanId}`,
 
+      );
+    } catch (error: any) {
+      throw error.response;
+    }
+  },
   personalAccountSearch: async (personalAccountNumber: string) => {
     try {
       return await instance.post("/admin-system/user/by/personalAccountNumber", {

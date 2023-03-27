@@ -94,7 +94,26 @@ export const searchPowerLorawanСoncentratorMeters = createAsyncThunk(
     }
   }
 );
+export const getPowerLorawanMeterById = createAsyncThunk(
+    'powerConcentrators/lorawan-udp/getLorawanMeterById',
+    async (params: {lorawanId:string}, thunkAPI) => {
+        try {
+            const response = await powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById(params);
 
+            return response.data;
+        } catch (error: any) {
+            //notistack
+            thunkAPI.dispatch(
+                addNotistack({
+                    statusCode: "",
+                    statusText: error.data.message,
+                    variant: "error",
+                })
+            );
+            return thunkAPI.rejectWithValue(error.data.status);
+        }
+    }
+)
 export const powerConcentratorPersonalAccountSearchThunk = createAsyncThunk(
   "powerConcentrators/lorawan-udp/edit/search",
   async (personalAccountNumber: string, thunkAPI) => {

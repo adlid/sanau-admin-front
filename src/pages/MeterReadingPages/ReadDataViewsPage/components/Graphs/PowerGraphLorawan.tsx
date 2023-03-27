@@ -1,6 +1,6 @@
-import { FC, memo, useState } from "react";
+import React, {FC, memo, useEffect, useState} from "react";
 
-import { MenuItem, Select } from "@material-ui/core";
+import {Box, createStyles, FormControlLabel, MenuItem, Select, Switch, Typography} from "@material-ui/core";
 import { BarChart } from "./BarChart";
 import { LineChart } from "./LineChart";
 
@@ -15,21 +15,62 @@ import {
   getSelectedGraphNamePhase,
   setCurrentLorawanItemDeviceName
 } from "../../../../../store/slicesAndThunks/powerIndication/powerIndication.slices";
+import {Spinner} from "react-bootstrap";
+import {
+  powerMeterLorawanUdpDeviceConcentratorAPI
+} from "../../../../../api/concentrator/powerMeterLorawanUdpDeviceConcentratorAPI";
+import {
+  getPowerLorawanMeterById,
+  toggleLorawanUdpRealyThunk
+} from "../../../../../store/slicesAndThunks/powerConcentrator/lorawanUdpDevice/lorawanUdpDevice.thunk";
+import {useHistory, useParams} from "react-router-dom";
+import queryString from "querystring";
+import {bool} from "yup";
+import {AxiosResponse} from "axios";
+import {makeStyles} from "@material-ui/core/styles";
 
 type PropsType = {
   type?: string;
 };
-
+interface IRelay {
+  deviceName: string,
+  id: string,
+  relay: boolean
+}
+const useStyles = makeStyles(() =>
+    createStyles({
+      switchBase:{
+        '& .MuiSwitch-switchBase ': {
+          top: 8,
+          left: 8
+        }
+      } ,
+    }),
+);
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
   const [isBarChart, setIsBarChart] = useState(true);
   const dispatch = useAppDispatch();
 
+  const classes = useStyles();
   const xAxisNew = useTypedSelector(getXaxisValuesLorawanNew);
   const yAxisNew = useTypedSelector(getYaxisValuesLorawanNew)
 
   const { lorawanTableDataNew } = useTypedSelector(state => state.powerIndication);
   const { selectedGraphNameLorawan, selectedGraphPhase } = useTypedSelector((state) => state.powerIndication);
   const { currentLorawanItemDeviceName } = useTypedSelector((state) => state.powerIndication);
+  const [toggle, setToggle] =  useState<boolean>(false);
+  const history = useHistory();
+  const { lorawanId }: any = queryString.parse(history.location.search.substring(1));
+
+
+  useEffect( () => {
+    powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById({lorawanId:lorawanId}).then((value:AxiosResponse<IRelay>)=> {
+      setToggle(value.data.relay)
+    })
+  },[])
+
+
 
   return (
     <div className="meters-graph">
@@ -65,6 +106,34 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
         </Select>
 
         <div className="d-flex">
+          <FormControlLabel
+              style={{
+                margin:0
+                }
+              }
+              value="start"
+              control={<Switch
+                  className={classes.switchBase}
+                  color={'primary'}
+                  {...label}
+                  onChange={(value)=>{
+                    powerMeterLorawanUdpDeviceConcentratorAPI.requestAnswerLoravanRelay({
+                      id: lorawanId,
+                      type: !toggle ? "relayOn" :"relayOff" ,
+                    }).then((val)=>{
+                      powerMeterLorawanUdpDeviceConcentratorAPI.responseAnswerLoravanRelay({ id: lorawanId,
+                        type: !toggle ? "relayOn" :"relayOff" ,}).then((res:AxiosResponse<{status:boolean}>)=>{
+                        setToggle(res.data.status)
+                      })
+                    });
+                  }}
+                  checked={toggle}
+                  value={toggle}/>}
+              label="Реле нагрузки"
+              labelPlacement="start"
+          />
+
+
           <svg
             onClick={() => setIsBarChart(true)}
             className="meters-graph__icon"
