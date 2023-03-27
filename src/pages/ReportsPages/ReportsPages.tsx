@@ -419,6 +419,12 @@ export const ReportsPages: FC<IReportsPagesProps> = (props) => {
                   addKeyToArrCallBack={addIdToArrCallBack}
                   removeKeyFromArrCallBack={removeIdFromArrCallBack}
               />)}
+              {currentReportType === 'Отчет для биллинга' && (id && index ? <>
+                  <ConcentratorPowerCountersChildren index={+index} keyOfTree={id} />
+              </> : <ConcentratorPowerCounters
+                  addKeyToArrCallBack={addIdToArrCallBack}
+                  removeKeyFromArrCallBack={removeIdFromArrCallBack}
+              />)}
               {currentReportType === 'Отчет отсутствующими показаниями' && (id && index ? <>
                   <ConcentratorPowerCountersChildren index={+index} keyOfTree={id} />
               </> : <ConcentratorPowerCounters
