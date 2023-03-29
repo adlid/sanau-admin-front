@@ -466,6 +466,7 @@ export interface ILorawanTableDataBodyWithPagination extends IBluetoothConcentra
 export interface ILorawanTableDataNew {
   data: ILorawanTableDataBodyWithPagination
   deviceName: string
+  id:string
 }
 
 export interface ILorawanGraphItemNew {
@@ -511,4 +512,5 @@ export interface ILorawanGraphItemNew {
 export interface ILorawanGraphDataNew {
   data: Array<ILorawanGraphItemNew>
   deviceName: string
+  id:string
 }

@@ -240,6 +240,12 @@ export const getCurrentLorawanGraphData = (state: AppStateType) => {
   return null
 }
 
+export const getLorawanGraphDataNew = createSelector(
+    getLorawanGraphData,
+    (graphData)=>{
+        return graphData
+    }
+)
 export const getXaxisValuesLorawanNew = createSelector(
   getLorawanGraphData,
   getLorawanSelectedGraph,
@@ -247,9 +253,6 @@ export const getXaxisValuesLorawanNew = createSelector(
   (graphData, selectedGraphName, currentDeviceName) => {
     if (graphData && currentDeviceName) {
       const data = graphData.filter(item => item.deviceName === currentDeviceName)
-      console.log(graphData);
-      console.log(currentDeviceName);
-      console.log(data)
       const res = data[0].data;
       if (res.length) {
         const final = res

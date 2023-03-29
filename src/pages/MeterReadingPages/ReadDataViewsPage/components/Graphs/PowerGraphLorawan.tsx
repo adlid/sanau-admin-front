@@ -5,6 +5,7 @@ import { BarChart } from "./BarChart";
 import { LineChart } from "./LineChart";
 
 import {
+  getLorawanGraphDataNew,
   getXaxisValuesLorawanNew,
   getYaxisValuesLorawanNew
 } from "../../../../../store/selects/powerIndication.selector";
@@ -55,19 +56,31 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
   const classes = useStyles();
   const xAxisNew = useTypedSelector(getXaxisValuesLorawanNew);
   const yAxisNew = useTypedSelector(getYaxisValuesLorawanNew)
-
+  const lorawanTableData = useTypedSelector(getLorawanGraphDataNew)
   const { lorawanTableDataNew } = useTypedSelector(state => state.powerIndication);
   const { selectedGraphNameLorawan, selectedGraphPhase } = useTypedSelector((state) => state.powerIndication);
   const { currentLorawanItemDeviceName } = useTypedSelector((state) => state.powerIndication);
   const [toggle, setToggle] =  useState<boolean>(false);
   const history = useHistory();
   const { lorawanId }: any = queryString.parse(history.location.search.substring(1));
-
+  const [currentLorawanId, setCurrentLorawanId] = useState<string>('')
 
   useEffect( () => {
-    powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById({lorawanId:lorawanId}).then((value:AxiosResponse<IRelay>)=> {
-      setToggle(value.data.relay)
-    })
+
+    if(!(lorawanId as string).includes(',')){
+      setCurrentLorawanId(lorawanId)
+      powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById({lorawanId:lorawanId}).then((value:AxiosResponse<IRelay>)=> {
+        setToggle(value.data.relay)
+      })
+    }else {
+      if(currentLorawanId.length > 0) {
+        const sortedCurrentLorawanId = lorawanTableData?.find((el)=>el.deviceName === currentLorawanItemDeviceName)
+        setCurrentLorawanId(sortedCurrentLorawanId!.id)
+        powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById({lorawanId:currentLorawanId}).then((value:AxiosResponse<IRelay>)=> {
+          setToggle(value.data.relay)
+        })
+      }
+    }
   },[])
 
 
@@ -80,6 +93,11 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
           value={currentLorawanItemDeviceName}
           onChange={(e) => {
             dispatch(setCurrentLorawanItemDeviceName(e.target.value as string));
+            const sortedCurrentLorawanId = lorawanTableData?.find((el)=>el.deviceName === e.target.value as string)
+
+            powerMeterLorawanUdpDeviceConcentratorAPI.getLorawanMeterById({lorawanId:sortedCurrentLorawanId!.id}).then((value:AxiosResponse<IRelay>)=> {
+              setToggle(value.data.relay)
+            })
           }}
           displayEmpty={true}
           MenuProps={{
@@ -95,8 +113,8 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
             getContentAnchorEl: null,
           }}
         >
-          {lorawanTableDataNew &&
-            lorawanTableDataNew.map((item, idx) => {
+          {lorawanTableData &&
+              lorawanTableData.map((item, idx) => {
               return (
                 <MenuItem key={idx} value={item.deviceName}>
                   Прибор учета № {item.deviceName}
@@ -117,15 +135,31 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
                   color={'primary'}
                   {...label}
                   onChange={(value)=>{
-                    powerMeterLorawanUdpDeviceConcentratorAPI.requestAnswerLoravanRelay({
-                      id: lorawanId,
-                      type: !toggle ? "relayOn" :"relayOff" ,
-                    }).then((val)=>{
-                      powerMeterLorawanUdpDeviceConcentratorAPI.responseAnswerLoravanRelay({ id: lorawanId,
-                        type: !toggle ? "relayOn" :"relayOff" ,}).then((res:AxiosResponse<{status:boolean}>)=>{
-                        setToggle(res.data.status)
-                      })
-                    });
+
+                    if(!(lorawanId as string).includes(',')){
+                      powerMeterLorawanUdpDeviceConcentratorAPI.requestAnswerLoravanRelay({
+                        id: lorawanId,
+                        type: !toggle ? "relayOn" :"relayOff" ,
+                      }).then((val)=>{
+                        powerMeterLorawanUdpDeviceConcentratorAPI.responseAnswerLoravanRelay({ id: lorawanId,
+                          type: !toggle ? "relayOn" :"relayOff" ,}).then((res:AxiosResponse<{status:boolean}>)=>{
+                          setToggle(res.data.status)
+                        })
+                      });
+                    }else{
+                      const sortedCurrentLorawanId = lorawanTableData?.find((el)=>el.deviceName === currentLorawanItemDeviceName)
+                      powerMeterLorawanUdpDeviceConcentratorAPI.requestAnswerLoravanRelay({
+                        id: sortedCurrentLorawanId!.id,
+                        type: !toggle ? "relayOn" :"relayOff" ,
+                      }).then((val)=>{
+                        powerMeterLorawanUdpDeviceConcentratorAPI.responseAnswerLoravanRelay({ id: sortedCurrentLorawanId!.id,
+                          type: !toggle ? "relayOn" :"relayOff" ,}).then((res:AxiosResponse<{status:boolean}>)=>{
+                          setToggle(res.data.status)
+                        })
+                      });
+                    }
+
+
                   }}
                   checked={toggle}
                   value={toggle}/>}
