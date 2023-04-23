@@ -11,7 +11,13 @@ export interface IPrivileges {
   position?: string;
   name: string;
 }
-
+export interface IUserrofile {
+  id: string;
+  firstname: string;
+  lastname: string;
+  fathersname: string;
+  phoneNumber: string | null;
+}
 export interface ITemplatesProps {
   id: string;
   name: string;

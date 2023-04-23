@@ -2,7 +2,10 @@ import { FC, useState } from "react";
 
 import { CSidebarNavItem, CLink } from "@coreui/react";
 
-import { ISidebarNavDropdownChildren, ISidebarNavDropdown } from "../../../../ts/interfaces/sidebar.interface";
+import {
+  ISidebarNavDropdownChildren,
+  ISidebarNavDropdown,
+} from "../../../../ts/interfaces/sidebar.interface";
 
 import { useTypedSelector } from "../../../../utils/hooks/reduxHooks";
 
@@ -15,15 +18,26 @@ export const SidebarNavDropdown: FC<PropsType> = ({ dropdownParams }) => {
 
   const { role, privileges } = useTypedSelector((state) => state.auth);
   const priv = JSON.parse(privileges || "[]");
-
+  console.log(role);
+  console.log(privileges);
+  console.log(dropdownParams);
   return (
-    <li className={toggleDropdownValue ? "c-sidebar-nav-dropdown c-show" : "c-sidebar-nav-dropdown"}>
+    <li
+      className={
+        toggleDropdownValue
+          ? "c-sidebar-nav-dropdown c-show"
+          : "c-sidebar-nav-dropdown"
+      }
+    >
       <div
         onClick={() => handleToggleDropdownValue(!toggleDropdownValue)}
         className="c-sidebar-nav-dropdown-toggle custom-sidebar"
         aria-label="menu dropdown"
       >
-        <div className="d-flex justify-content-center" style={{ marginLeft: "-16px", minWidth: "56px" }}>
+        <div
+          className="d-flex justify-content-center"
+          style={{ marginLeft: "-16px", minWidth: "56px" }}
+        >
           <img alt="img" src={dropdownParams.customIcon} />
         </div>
 
@@ -33,7 +47,9 @@ export const SidebarNavDropdown: FC<PropsType> = ({ dropdownParams }) => {
         {(role === "ROLE_GLOBAL"
           ? dropdownParams.children
           : dropdownParams.children.filter(
-              (item) => item.id === "" || priv.filter((p: any) => p.name === item.id).length > 0
+              (item) =>
+                item.id === "" ||
+                priv.filter((p: any) => p.name === item.id).length > 0
             )
         ).map((item: ISidebarNavDropdownChildren) => (
           <CSidebarNavItem key={item.name}>

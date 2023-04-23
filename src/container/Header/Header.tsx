@@ -19,8 +19,11 @@ export const Header: FC<IHeaderProps> = (props) => {
   // hooks
   const dispatch = useAppDispatch();
   const { role, fullName } = useTypedSelector((state) => state.auth);
-
-  const roles: any = { ROLE_OPERATOR: "Оператор", ROLE_GLOBAL: "Администратор" };
+  const { userProfile } = useTypedSelector((state) => state.user);
+  const roles: any = {
+    ROLE_OPERATOR: "Оператор",
+    ROLE_GLOBAL: "Администратор",
+  };
 
   // pop up menus handlers
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
@@ -42,26 +45,56 @@ export const Header: FC<IHeaderProps> = (props) => {
         content={
           <div className="private-header__menu">
             {role === "ROLE_OPERATOR" && (
-              <NavLink onClick={() => setIsPopoverOpen(false)} className="menu" to="/admin/profile">
-                <img className="menu__item" src={icons.menuItem2} alt="menu-item" />
+              <NavLink
+                onClick={() => setIsPopoverOpen(false)}
+                className="menu"
+                to="/admin/profile"
+              >
+                <img
+                  className="menu__item"
+                  src={icons.menuItem2}
+                  alt="menu-item"
+                />
                 <span className="menu__text">Настройки</span>
               </NavLink>
             )}
-
+            {role === "ROLE_GLOBAL" && (
+              <NavLink
+                onClick={() => setIsPopoverOpen(false)}
+                className="menu"
+                to="/admin/admin-profile"
+              >
+                <img
+                  className="menu__item"
+                  src={icons.menuItem2}
+                  alt="menu-item"
+                />
+                <span className="menu__text">Настройsки</span>
+              </NavLink>
+            )}
             <div onClick={() => dispatch(logOut())} className="menu">
-              <img className="menu__item" src={icons.menuItem3} alt="menu-item" />
+              <img
+                className="menu__item"
+                src={icons.menuItem3}
+                alt="menu-item"
+              />
               <span className="menu__text">Выйти</span>
             </div>
           </div>
         }
         onClickOutside={() => setIsPopoverOpen(false)}
       >
-        <div className="header__rightSide" onClick={() => setIsPopoverOpen(true)}>
+        <div
+          className="header__rightSide"
+          onClick={() => setIsPopoverOpen(true)}
+        >
           <div className="header__rightSide_avatar">
             <Avatar />
           </div>
           <div className="header__rightSide_info">
-            <p className="fio">{fullName}</p>
+            <p className="fio">
+              {`${userProfile?.firstname} ${userProfile?.lastname}`}{" "}
+            </p>
             <p className="role">{role && roles[role]}</p>
           </div>
         </div>

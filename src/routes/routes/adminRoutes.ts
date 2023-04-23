@@ -94,6 +94,7 @@ import { PowerReadDinRail } from "../../pages/MeterReadingPages/ReadDataViewsPag
 import { EditConnectionDinRail } from "../../pages/PowerMeterConcentrator/EditPowerMeterConcentratorPages/EditConnectionDinRail/EditConnectionDinRail";
 import { ConnectionDinRail } from "../../pages/PowerMeterConcentrator/ConnectPowerMeterConcentratorPages/ConnectionDinRail";
 import { InfoPowerMetersAddToFolder } from "../../pages/PowerMeterConcentrator/InfoPowerMeterConcentratorPages/components/InfoByBluetooth/InfoPowerMetersAddToFolder";
+import { ProfilePage } from "../../pages/ProfilePage/ProfilePage";
 
 export const adminRoutes = [
   // MAIN PAGE
@@ -165,7 +166,12 @@ export const adminRoutes = [
     exact: true,
     component: AddingTheNewTransmissionMeterPage,
   },
-
+  {
+    id: "Профиль",
+    path: "/admin/admin-profile",
+    exact: true,
+    component: ProfilePage,
+  },
   {
     id: "Управление ПУ электроэнергий",
     path: "/admin/concentrators/power-meter/edit/connection-by-transmission-device",

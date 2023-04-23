@@ -39,6 +39,7 @@ import { reportsReducer } from "./slicesAndThunks/reports/reports.slices";
 
 //monitoring
 import { monitoringReducer } from "./slicesAndThunks/monitoring/monitoring.slice";
+import { userReducer } from "./slicesAndThunks/users/user/user.slices";
 
 export const rootReducer = combineReducers({
   redirectNotistack: redirectAndNotificationReducers,
@@ -66,7 +67,7 @@ export const rootReducer = combineReducers({
   //users
   operators: operatorsReducer,
   clients: clientsReducer,
-
+  user: userReducer,
   //news
   news: newsReducer,
 
