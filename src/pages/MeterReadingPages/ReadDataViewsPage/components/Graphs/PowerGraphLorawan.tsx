@@ -124,7 +124,7 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
         </Select>
 
         <div className="d-flex">
-          <FormControlLabel
+          {/* <FormControlLabel
               style={{
                 margin:0
                 }
@@ -165,7 +165,7 @@ export const PowerGraphLorawan: FC<PropsType> = memo(({ type = "uspd" }) => {
                   value={toggle}/>}
               label="Реле нагрузки"
               labelPlacement="start"
-          />
+          /> */}
 
 
           <svg
