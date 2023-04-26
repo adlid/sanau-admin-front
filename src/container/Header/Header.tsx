@@ -69,7 +69,7 @@ export const Header: FC<IHeaderProps> = (props) => {
                   src={icons.menuItem2}
                   alt="menu-item"
                 />
-                <span className="menu__text">Настройsки</span>
+                <span className="menu__text">Настройки</span>
               </NavLink>
             )}
             <div onClick={() => dispatch(logOut())} className="menu">
@@ -93,7 +93,7 @@ export const Header: FC<IHeaderProps> = (props) => {
           </div>
           <div className="header__rightSide_info">
             <p className="fio">
-              {`${userProfile?.firstname} ${userProfile?.lastname}`}{" "}
+              {fullName} 
             </p>
             <p className="role">{role && roles[role]}</p>
           </div>
