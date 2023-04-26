@@ -95,6 +95,7 @@ import { EditConnectionDinRail } from "../../pages/PowerMeterConcentrator/EditPo
 import { ConnectionDinRail } from "../../pages/PowerMeterConcentrator/ConnectPowerMeterConcentratorPages/ConnectionDinRail";
 import { InfoPowerMetersAddToFolder } from "../../pages/PowerMeterConcentrator/InfoPowerMeterConcentratorPages/components/InfoByBluetooth/InfoPowerMetersAddToFolder";
 import { ProfilePage } from "../../pages/ProfilePage/ProfilePage";
+import { RelePage } from "../../pages/RelePage/RelePage";
 
 export const adminRoutes = [
   // MAIN PAGE
@@ -159,7 +160,12 @@ export const adminRoutes = [
     exact: true,
     component: EditConnectionDinRail,
   },
-
+  {
+    id: "Реле нагрузки",
+    path: "/admin/rele",
+    exact: true,
+    component: RelePage,
+  },
   {
     id: "Управление ПУ электроэнергий",
     path: "/admin/concentrators/power-meter/add-meter/connection-by-transmission-device",

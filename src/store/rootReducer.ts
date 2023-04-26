@@ -40,6 +40,7 @@ import { reportsReducer } from "./slicesAndThunks/reports/reports.slices";
 //monitoring
 import { monitoringReducer } from "./slicesAndThunks/monitoring/monitoring.slice";
 import { userReducer } from "./slicesAndThunks/users/user/user.slices";
+import { releHistoryReducer } from "./slicesAndThunks/releHistory/rele.slices";
 
 export const rootReducer = combineReducers({
   redirectNotistack: redirectAndNotificationReducers,
@@ -68,6 +69,7 @@ export const rootReducer = combineReducers({
   operators: operatorsReducer,
   clients: clientsReducer,
   user: userReducer,
+  rele: releHistoryReducer,
   //news
   news: newsReducer,
 

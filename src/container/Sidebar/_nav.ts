@@ -10,7 +10,6 @@ import Item9 from "../../assets/sidebarIcons/item9.svg";
 import Item10 from "../../assets/sidebarIcons/item10.svg";
 import Item11 from "../../assets/sidebarIcons/item11.svg";
 
-
 export const navigation = [
   {
     _tag: "SidebarNavItem",
@@ -31,6 +30,13 @@ export const navigation = [
     id: "Мониторинг показаний",
     name: "Мониторинг показаний",
     to: "/admin/monitoring-main?powerMetersPage=1&tabValue=power",
+    customIcon: Item3,
+  },
+  {
+    _tag: "SidebarNavItem",
+    id: "Реле нагрузки",
+    name: "Реле нагрузки",
+    to: "/admin/rele",
     customIcon: Item3,
   },
   {
