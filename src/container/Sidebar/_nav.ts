@@ -32,13 +32,7 @@ export const navigation = [
     to: "/admin/monitoring-main?powerMetersPage=1&tabValue=power",
     customIcon: Item3,
   },
-  {
-    _tag: "SidebarNavItem",
-    id: "Реле нагрузки",
-    name: "Реле нагрузки",
-    to: "/admin/rele",
-    customIcon: Item3,
-  },
+
   {
     _tag: "SidebarNavItem",
     id: "Отчеты",
@@ -130,6 +124,11 @@ export const navigation = [
         id: "",
         name: "Система и устройства",
         to: "/admin/logs/devices",
+      },
+      {
+        id: "Реле нагрузки",
+        name: "Реле нагрузки",
+        to: "/admin/rele",
       },
     ],
   },
