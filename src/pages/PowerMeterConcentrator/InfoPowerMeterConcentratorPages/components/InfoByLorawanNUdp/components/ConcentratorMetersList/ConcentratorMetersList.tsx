@@ -6,7 +6,10 @@ import { Drawer, MenuItem, Select } from "@material-ui/core";
 //components
 import { Search } from "../../../../../../../components/uiKit/Search";
 //redux
-import { useAppDispatch, useTypedSelector } from "../../../../../../../utils/hooks/reduxHooks";
+import {
+  useAppDispatch,
+  useTypedSelector,
+} from "../../../../../../../utils/hooks/reduxHooks";
 import { ConcentratorMeterType } from "../../../../../../../ts/types/lorawanUdpDevice.types";
 import { searchPowerLorawanСoncentratorMeters } from "../../../../../../../store/slicesAndThunks/powerConcentrator/lorawanUdpDevice/lorawanUdpDevice.thunk";
 import {
@@ -31,10 +34,12 @@ const menuProps: any = {
   anchorOrigin: { vertical: 10, horizontal: -13 },
   transformOrigin: { vertical: "top", horizontal: "left" },
   getContentAnchorEl: null,
-  PaperProps: { style: { maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP, width: "12%" } },
+  PaperProps: {
+    style: { maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP, width: "12%" },
+  },
 };
 
-type PropsType = { 
+type PropsType = {
   id: string;
   filterHeight?: any;
   toggleDeactivateConcentratorMeter: (bool: boolean) => void;
@@ -42,10 +47,15 @@ type PropsType = {
 };
 
 export const ConcentratorMetersList: FC<PropsType> = (props) => {
-  const { id, filterHeight, toggleDeactivateConcentratorMeter, toggleActivateConcentratorMeter } = props;
+  const {
+    id,
+    filterHeight,
+    toggleDeactivateConcentratorMeter,
+    toggleActivateConcentratorMeter,
+  } = props;
   const dispatch = useAppDispatch();
   const history = useHistory();
- 
+
   // const [pageNum, setPageNum] = useState<number>(1);
   const { page }: any = queryString.parse(history.location.search.substring(1));
   const [searchValue, setSearchValue] = useState("");
@@ -61,11 +71,17 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
     selectedConcentrator,
   } = useTypedSelector((state) => state.powerMeterLorawanUdpConcentrator);
 
-  const setSelectedMeterObjCallback = (meter: ConcentratorMeterType) => dispatch(setSelectedMeterObj(meter));
+  const setSelectedMeterObjCallback = (meter: ConcentratorMeterType) =>
+    dispatch(setSelectedMeterObj(meter));
 
   const searchMeters = async (pageNum?: number) => {
     await dispatch(
-      searchPowerLorawanСoncentratorMeters({ id, page: pageNum || page || 1, query: searchValue, type: typeValue })
+      searchPowerLorawanСoncentratorMeters({
+        id,
+        page: pageNum || page || 1,
+        query: searchValue,
+        type: typeValue,
+      })
     );
   };
 
@@ -79,15 +95,24 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
 
   // SIDEBAR HANDLERS
   const [sideBarOpen, setSideBarOpen] = useState<boolean>(false);
-  const sideBarToggle = (state: boolean) => (event: any) => setSideBarOpen(state);
+  const sideBarToggle = (state: boolean) => (event: any) =>
+    setSideBarOpen(state);
 
-  const addOneMeterIdToArrCallback = (id: string) => dispatch(addOneMeterIdToArr(id));
-  const addMetersIdToArrCallBack = (id: string) => dispatch(addMetersIdToArr(id));
-  const removeMetersIdFromArrCallBack = (id: string) => dispatch(removeMetersIdFromArr(id));
+  const addOneMeterIdToArrCallback = (id: string) =>
+    dispatch(addOneMeterIdToArr(id));
+  const addMetersIdToArrCallBack = (id: string) =>
+    dispatch(addMetersIdToArr(id));
+  const removeMetersIdFromArrCallBack = (id: string) =>
+    dispatch(removeMetersIdFromArr(id));
 
   return (
     <>
-      <Drawer anchor={"right"} open={sideBarOpen} onClose={sideBarToggle(false)} classes={{ paper: "table-drawer" }}>
+      <Drawer
+        anchor={"right"}
+        open={sideBarOpen}
+        onClose={sideBarToggle(false)}
+        classes={{ paper: "table-drawer" }}
+      >
         <div style={{ width: "450px" }}>
           <ConcentratorMeterItemSideBar close={sideBarToggle(false)} />
         </div>
@@ -123,7 +148,7 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
               <MenuItem value={"serial"}>Серийный номер</MenuItem>
               <MenuItem value={"accountNumber"}>Лицевой счет</MenuItem>
               {/* <MenuItem value={"partner"}>ФИО контрагента</MenuItem> */}
-              {/* <MenuItem value={"devEUI "}>devEUI</MenuItem> */}
+              <MenuItem value={"deviceName "}>Наименование</MenuItem>
               <MenuItem value={"address"}>Адрес</MenuItem>
               {/* <MenuItem value={"type"}>Тип счетчика</MenuItem> */}
             </Select>
@@ -134,7 +159,9 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
             <MainButton
               title="Активировать"
               style={{ width: 158, height: 40, fontSize: 14 }}
-              isDisabled={selectedMeters.length === 0 || selectedConcentrator?.active}
+              isDisabled={
+                selectedMeters.length === 0 || selectedConcentrator?.active
+              }
               onClick={() => toggleActivateConcentratorMeter(true)}
             />
             <div className="mr12px "></div>
@@ -142,7 +169,9 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
               title="Деактивировать"
               isAlarm
               style={{ width: 175, height: 40, fontSize: 14 }}
-              isDisabled={selectedMeters.length === 0 || !selectedConcentrator?.active}
+              isDisabled={
+                selectedMeters.length === 0 || !selectedConcentrator?.active
+              }
               onClick={() => toggleDeactivateConcentratorMeter(true)}
             />
           </div>
@@ -195,8 +224,12 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
                 meterData={item}
                 setSelectedMeterObjCallback={setSelectedMeterObjCallback}
                 sideBarToggle={sideBarToggle}
-                toggleActivateConcentratorMeter={toggleActivateConcentratorMeter}
-                toggleDeactivateConcentratorMeter={toggleDeactivateConcentratorMeter}
+                toggleActivateConcentratorMeter={
+                  toggleActivateConcentratorMeter
+                }
+                toggleDeactivateConcentratorMeter={
+                  toggleDeactivateConcentratorMeter
+                }
                 addOneMeterIdToArrCallback={addOneMeterIdToArrCallback}
                 addMetersIdToArrCallBack={addMetersIdToArrCallBack}
                 removeMetersIdFromArrCallBack={removeMetersIdFromArrCallBack}
@@ -206,7 +239,11 @@ export const ConcentratorMetersList: FC<PropsType> = (props) => {
           <Pagination
             totalPage={selectedConcentratorMeters?.totalPage || 1}
             page={+page}
-            onPageChanged={(page) => history.push({ search: `?tabValue=info-by-lorawan-udp&page=${page}` })}
+            onPageChanged={(page) =>
+              history.push({
+                search: `?tabValue=info-by-lorawan-udp&page=${page}`,
+              })
+            }
           />
         </div>
       </div>
